@@ -1,0 +1,9 @@
+{
+  "minScore": 0.55,
+  "minMargin": 0.04,
+  "contextWeight": 0.25,
+  "weights": { "role": 0.25, "name": 0.35, "label": 0.2, "placeholder": 0.1 },
+  "verifyMin": 0.8,
+  "retry": { "attempts": 3, "delaysMs": [1000, 2000] },
+  "tuned": false
+}
