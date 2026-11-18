@@ -39,3 +39,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Context route guard aborts any non-local request and counts them
   - [x] Recorder-side check refuses type=password and similar sensitive fields
   - [x] Tests prove external navigation is blocked and zero external requests happen on a demo flow
+
+## #5 SQLite schema, migrations and typed repository
+- Label: feature | Milestone: Phase 1 | Branch: `phase-1/sqlite-store` | Status: fixed in PR #5
+- What and why: SQLite schema, migrations and typed repository.
+- Acceptance checks:
+  - [x] schema.sql with the seven tables
+  - [x] Migrations driven by PRAGMA user_version
+  - [x] Typed repository functions for workflows, steps, runs, run_steps, approvals, llm_calls, embeddings
+  - [x] Tests on an in-memory database

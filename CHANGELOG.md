@@ -11,3 +11,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #4 Safety allowlist, route guard and password refusal: URL allowlist, Playwright context route guard that aborts and counts non-local requests, and a recorder-side refusal of password/payment/CAPTCHA fields.
 
+- PR #5 SQLite schema, migrations and typed repository: SQLite schema with seven tables, user_version migrations and a typed Store repository (versioned workflows, runs, approvals, LLM ledger, embedding cache).
+
