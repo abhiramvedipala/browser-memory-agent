@@ -221,9 +221,9 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] replay_workflow returns a summary or pending_approval with fields and a screenshot path
 
 ## #25 Tuned thresholds accept a wrong element when the target is absent
-- Label: bug | Milestone: Phase 4 | Branch: `phase-4/fix-tuning-negatives` | Status: open
+- Label: bug | Milestone: Phase 4 | Branch: `phase-4/fix-tuning-negatives` | Status: fixed in PR #25
 - What and why: Tuned thresholds accept a wrong element when the target is absent. GitHub issue #1. Note: local PRs #21 to #24 were merged while these two tests failed, because the local merge script piped check.sh into tail and read tail's exit code; the script now checks check.sh's own exit code.
 - Acceptance checks:
-  - [ ] Tuning includes target-absent negative rows
-  - [ ] resolver and replay refusal tests pass
-  - [ ] ISSUES records that PRs 21-24 merged with these two tests failing
+  - [x] Tuning includes target-absent negative rows
+  - [x] resolver and replay refusal tests pass
+  - [x] ISSUES records that PRs 21-24 merged with these two tests failing
