@@ -16,6 +16,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 ## Phase 2: Recorder
 - [x] In-page target extractor (PR #8)
 - [x] Event recorder with debounced fills and parameter detection (PR #9)
+- [x] Deterministic golden recordings of all 20 flows (PR #10)
 <!-- phase-2 -->
 
 ## Phase 3: Replayer, resolver and approval gate

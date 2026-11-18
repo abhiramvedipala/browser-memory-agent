@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "flowId": "docs-client-notes",
+  "app": "docs",
+  "name": "docs-client-notes",
+  "task": "Open the Client API page from the sidebar and switch to the Notes tab",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/docs",
+  "params": {},
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs",
+      "valueTemplate": "http://127.0.0.1:4173/docs/",
+      "target": null
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Reference",
+        "label": "",
+        "placeholder": "",
+        "text": "Reference",
+        "nearbyText": "",
+        "tag": "summary",
+        "inputType": "",
+        "attrs": {},
+        "cssCandidates": [
+          "div > aside > details:nth-of-type(2) > summary"
+        ],
+        "bbox": {
+          "x": 170,
+          "y": 85,
+          "width": 214,
+          "height": 22
+        },
+        "frameUrl": "http://127.0.0.1:4173/docs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "API",
+        "label": "",
+        "placeholder": "",
+        "text": "API",
+        "nearbyText": "",
+        "tag": "summary",
+        "inputType": "",
+        "attrs": {},
+        "cssCandidates": [
+          "aside > details:nth-of-type(2) > details:nth-of-type(1) > summary"
+        ],
+        "bbox": {
+          "x": 179,
+          "y": 110,
+          "width": 205,
+          "height": 22
+        },
+        "frameUrl": "http://127.0.0.1:4173/docs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Client API",
+        "label": "",
+        "placeholder": "",
+        "text": "Client API",
+        "nearbyText": "",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/docs/page/client"
+        },
+        "cssCandidates": [
+          "details:nth-of-type(1) > ul > li:nth-of-type(1) > a"
+        ],
+        "bbox": {
+          "x": 192,
+          "y": 148,
+          "width": 67,
+          "height": 18
+        },
+        "frameUrl": "http://127.0.0.1:4173/docs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs/page/client",
+      "valueTemplate": null,
+      "target": {
+        "role": "tab",
+        "accessibleName": "Notes",
+        "label": "",
+        "placeholder": "",
+        "text": "Notes",
+        "nearbyText": "Client API",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/docs/page/client?tab=notes",
+          "role": "tab",
+          "aria-selected": "false"
+        },
+        "cssCandidates": [
+          "nav > div > span:nth-of-type(3) > a"
+        ],
+        "bbox": {
+          "x": 595,
+          "y": 242,
+          "width": 41,
+          "height": 18
+        },
+        "frameUrl": "http://127.0.0.1:4173/docs/page/client"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "dc.sec.reference",
+    "dc.sub.api",
+    "dc.leaf.client",
+    "dc.tab.notes"
+  ]
+}

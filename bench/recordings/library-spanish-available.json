@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "flowId": "library-spanish-available",
+  "app": "library",
+  "name": "library-spanish-available",
+  "task": "Find an available {{language}} book about {{keywords}}",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/library",
+  "params": {
+    "keywords": "climate",
+    "language": "spanish"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "http://127.0.0.1:4173/library/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "{{keywords}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Keywords",
+        "label": "Keywords",
+        "placeholder": "Title, topic or subject",
+        "text": "",
+        "nearbyText": "City Library | Keywords",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "keywords",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-keywords",
+          "[data-testid=\"keywords-input\"]",
+          "form > div:nth-of-type(1) > div > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 183,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Advanced filters",
+        "label": "",
+        "placeholder": "",
+        "text": "Advanced filters",
+        "nearbyText": "City Library",
+        "tag": "summary",
+        "inputType": "",
+        "attrs": {},
+        "cssCandidates": [
+          "div > form > details > summary"
+        ],
+        "bbox": {
+          "x": 170,
+          "y": 226,
+          "width": 950,
+          "height": 22
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "{{language}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Language",
+        "label": "Language",
+        "placeholder": "",
+        "text": "Any language English Spanish French",
+        "nearbyText": "City Library | Language",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "language"
+        },
+        "cssCandidates": [
+          "#f-language",
+          "[data-testid=\"language-select\"]",
+          "details > div > div:nth-of-type(3) > select"
+        ],
+        "bbox": {
+          "x": 170,
+          "y": 408,
+          "width": 127,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "check",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "true",
+      "target": {
+        "role": "checkbox",
+        "accessibleName": "Available now only",
+        "label": "Available now only",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "City Library | Available now only",
+        "tag": "input",
+        "inputType": "checkbox",
+        "attrs": {
+          "name": "available",
+          "type": "checkbox",
+          "value": "yes"
+        },
+        "cssCandidates": [
+          "#f-available-yes",
+          "[data-testid=\"available-yes\"]",
+          "details > div > div:nth-of-type(4) > input"
+        ],
+        "bbox": {
+          "x": 174,
+          "y": 451,
+          "width": 13,
+          "height": 13
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search catalog",
+        "label": "",
+        "placeholder": "",
+        "text": "Search catalog",
+        "nearbyText": "City Library",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-catalog-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 478,
+          "width": 122,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/catalog",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Cambio climatico y sociedad",
+        "label": "",
+        "placeholder": "",
+        "text": "Cambio climatico y sociedad",
+        "nearbyText": "Catalog",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/library/item/6"
+        },
+        "cssCandidates": [
+          "ul > li > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 332,
+          "width": 239,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/catalog?keywords=climate&author=&yearFrom=&language=spanish&available=yes"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "lb.kw",
+    "lb.adv",
+    "lb.lang",
+    "lb.avail",
+    "lb.search",
+    "lb.res.6"
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "schema": 1,
+  "flowId": "helpdesk-account",
+  "app": "helpdesk",
+  "name": "helpdesk-account",
+  "task": "Open a {{category}} ticket with {{priority}} priority about {{subject}}",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/helpdesk",
+  "params": {
+    "name": "Riley Sample",
+    "email": "alex@example.test",
+    "category": "account",
+    "priority": "low",
+    "subject": "Change my display name",
+    "description": "Please update the name shown on my profile."
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk",
+      "valueTemplate": "http://127.0.0.1:4173/helpdesk/",
+      "target": null
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Open a new ticket",
+        "label": "",
+        "placeholder": "",
+        "text": "Open a new ticket",
+        "nearbyText": "Help Desk",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/helpdesk/new"
+        },
+        "cssCandidates": [
+          "main > div > p:nth-of-type(2) > a"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 162,
+          "width": 123,
+          "height": 18
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new",
+      "valueTemplate": "{{name}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Your name",
+        "label": "Your name",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "New ticket: your details | Your name",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "name",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-name",
+          "[data-testid=\"name-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(1) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 146,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new",
+      "valueTemplate": "{{email}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Contact email",
+        "label": "Contact email",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "New ticket: your details | Contact email",
+        "tag": "input",
+        "inputType": "email",
+        "attrs": {
+          "name": "email",
+          "type": "email"
+        },
+        "cssCandidates": [
+          "#f-email",
+          "[data-testid=\"email-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(2) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 211,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Continue",
+        "label": "",
+        "placeholder": "",
+        "text": "Continue",
+        "nearbyText": "New ticket: your details",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"continue-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 255,
+          "width": 82,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new"
+      }
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new/:id",
+      "valueTemplate": "{{category}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Category",
+        "label": "Category",
+        "placeholder": "",
+        "text": "Billing Technical Account",
+        "nearbyText": "New ticket: the problem | Category",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "category"
+        },
+        "cssCandidates": [
+          "#f-category",
+          "[data-testid=\"category-select\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(1) > select"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 146,
+          "width": 99,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new/2"
+      }
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new/:id",
+      "valueTemplate": "{{priority}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Priority",
+        "label": "Priority",
+        "placeholder": "",
+        "text": "Low Normal High",
+        "nearbyText": "New ticket: the problem | Priority",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "priority"
+        },
+        "cssCandidates": [
+          "#f-priority",
+          "[data-testid=\"priority-select\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(2) > select"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 208,
+          "width": 84,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new/2"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new/:id",
+      "valueTemplate": "{{subject}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Subject",
+        "label": "Subject",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "New ticket: the problem | Subject",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "subject",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-subject",
+          "[data-testid=\"subject-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(3) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 269,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new/2"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new/:id",
+      "valueTemplate": "{{description}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Describe the problem",
+        "label": "Describe the problem",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "New ticket: the problem | Describe the problem",
+        "tag": "textarea",
+        "inputType": "",
+        "attrs": {
+          "name": "description"
+        },
+        "cssCandidates": [
+          "#f-description",
+          "[data-testid=\"description-text\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(4) > textarea"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 334,
+          "width": 194,
+          "height": 99
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new/2"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new/:id",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Continue",
+        "label": "",
+        "placeholder": "",
+        "text": "Continue",
+        "nearbyText": "New ticket: the problem",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"continue-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 447,
+          "width": 82,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new/2"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/helpdesk/new/:id",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Submit ticket",
+        "label": "",
+        "placeholder": "",
+        "text": "Submit ticket",
+        "nearbyText": "New ticket: review",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"submit-ticket-btn\"]",
+          "div > form > div:nth-of-type(1) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 401,
+          "width": 110,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/helpdesk/new/3"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "hd.open",
+    "hd.name",
+    "hd.email",
+    "hd.next1",
+    "hd.category",
+    "hd.priority",
+    "hd.subject",
+    "hd.description",
+    "hd.next2",
+    "hd.submit"
+  ]
+}

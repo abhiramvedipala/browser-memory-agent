@@ -23,3 +23,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #9 Event recorder with debounced fills and parameter detection: Recorder that attaches to a browser context and turns click, fill (debounced), select, check, Enter and submit into workflow steps with {{param}} detection; refuses password/payment fields before the value leaves the page.
 
+- PR #10 Deterministic golden recordings of all 20 flows: npm run record:golden records all 20 flows via the real recorder in a guarded context and writes JSON (with a scorer-only ground-truth sidecar); a test re-records and diffs.
+

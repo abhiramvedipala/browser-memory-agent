@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "flowId": "bookshop-history-hardcover",
+  "app": "bookshop",
+  "name": "bookshop-history-hardcover",
+  "task": "Browse {{category}} books, keep only {{format}} and open Sapiens",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/bookshop",
+  "params": {
+    "category": "history",
+    "format": "hardcover"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": "http://127.0.0.1:4173/bookshop/",
+      "target": null
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": "{{category}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Category",
+        "label": "Category",
+        "placeholder": "",
+        "text": "All categories Programming Fiction Science History",
+        "nearbyText": "Welcome to the Bookshop | Category",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "category"
+        },
+        "cssCandidates": [
+          "#f-category",
+          "[data-testid=\"category-select\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(2) > select"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 248,
+          "width": 128,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search",
+        "label": "",
+        "placeholder": "",
+        "text": "Search",
+        "nearbyText": "Welcome to the Bookshop",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 288,
+          "width": 68,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/"
+      }
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": "{{format}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Format",
+        "label": "Format",
+        "placeholder": "",
+        "text": "Any format Paperback Hardcover",
+        "nearbyText": "Filters | Search results | Format",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "format"
+        },
+        "cssCandidates": [
+          "#f-format",
+          "[data-testid=\"format-select\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(3) > select"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 273,
+          "width": 110,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=&category=history"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Apply filters",
+        "label": "",
+        "placeholder": "",
+        "text": "Apply filters",
+        "nearbyText": "Filters | Search results",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"apply-filters-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 378,
+          "width": 102,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=&category=history"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Sapiens",
+        "label": "",
+        "placeholder": "",
+        "text": "Sapiens",
+        "nearbyText": "Search results",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/bookshop/book/15"
+        },
+        "cssCandidates": [
+          "li:nth-of-type(1) > article > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 495,
+          "width": 67,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=&category=history&format=hardcover&maxPrice="
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "bk.cat",
+    "bk.search",
+    "bk.f.format",
+    "bk.f.apply",
+    "bk.res.15"
+  ]
+}

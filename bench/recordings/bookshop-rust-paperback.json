@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "flowId": "bookshop-rust-paperback",
+  "app": "bookshop",
+  "name": "bookshop-rust-paperback",
+  "task": "Find a {{format}} book about {{query}} under ${{maxPrice}} and add it to the cart",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/bookshop",
+  "params": {
+    "query": "rust",
+    "format": "paperback",
+    "maxPrice": "40"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": "http://127.0.0.1:4173/bookshop/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": "{{query}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Search books",
+        "label": "Search books",
+        "placeholder": "Title or author",
+        "text": "",
+        "nearbyText": "Welcome to the Bookshop | Search books",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "q",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-q",
+          "[data-testid=\"q-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(1) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 183,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search",
+        "label": "",
+        "placeholder": "",
+        "text": "Search",
+        "nearbyText": "Welcome to the Bookshop",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 288,
+          "width": 68,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/"
+      }
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": "{{format}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Format",
+        "label": "Format",
+        "placeholder": "",
+        "text": "Any format Paperback Hardcover",
+        "nearbyText": "Filters | Search results | Format",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "format"
+        },
+        "cssCandidates": [
+          "#f-format",
+          "[data-testid=\"format-select\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(3) > select"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 273,
+          "width": 110,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=rust&category="
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": "{{maxPrice}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Maximum price",
+        "label": "Maximum price",
+        "placeholder": "e.g. 40",
+        "text": "",
+        "nearbyText": "Filters | Search results | Maximum price",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "maxPrice",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-maxPrice",
+          "[data-testid=\"maxPrice-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(4) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 334,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=rust&category="
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Apply filters",
+        "label": "",
+        "placeholder": "",
+        "text": "Apply filters",
+        "nearbyText": "Filters | Search results",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"apply-filters-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 378,
+          "width": 102,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=rust&category="
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Rust for Rustaceans",
+        "label": "",
+        "placeholder": "",
+        "text": "Rust for Rustaceans",
+        "nearbyText": "The Rust Programming Language",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/bookshop/book/4"
+        },
+        "cssCandidates": [
+          "li:nth-of-type(2) > article > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 620,
+          "width": 169,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=rust&category=&format=paperback&maxPrice=40"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/book/:id",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Add to cart",
+        "label": "",
+        "placeholder": "",
+        "text": "Add to cart",
+        "nearbyText": "Rust for Rustaceans",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"add-to-cart-btn\"]",
+          "div > form > div:nth-of-type(1) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 198,
+          "width": 96,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/book/4"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "bk.q",
+    "bk.search",
+    "bk.f.format",
+    "bk.f.max",
+    "bk.f.apply",
+    "bk.res.4",
+    "bk.add"
+  ]
+}

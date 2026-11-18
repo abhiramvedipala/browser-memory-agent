@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "flowId": "docs-proxy-search",
+  "app": "docs",
+  "name": "docs-proxy-search",
+  "task": "Search the docs for {{q}} and open the proxy page",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/docs",
+  "params": {
+    "q": "proxy"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs",
+      "valueTemplate": "http://127.0.0.1:4173/docs/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs",
+      "valueTemplate": "{{q}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Search the docs",
+        "label": "Search the docs",
+        "placeholder": "keyword",
+        "text": "",
+        "nearbyText": "Product Docs | Search the docs",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "q",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-q",
+          "[data-testid=\"q-input\"]",
+          "form > div:nth-of-type(1) > div > input"
+        ],
+        "bbox": {
+          "x": 408,
+          "y": 199,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/docs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search docs",
+        "label": "",
+        "placeholder": "",
+        "text": "Search docs",
+        "nearbyText": "Product Docs",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-docs-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 408,
+          "y": 242,
+          "width": 105,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/docs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/docs/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Configure the proxy",
+        "label": "",
+        "placeholder": "",
+        "text": "Configure the proxy",
+        "nearbyText": "Search results",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/docs/page/proxy"
+        },
+        "cssCandidates": [
+          "ul > li > h3 > a"
+        ],
+        "bbox": {
+          "x": 419,
+          "y": 323,
+          "width": 166,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/docs/search?q=proxy"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "dc.q",
+    "dc.search",
+    "dc.res.proxy"
+  ]
+}

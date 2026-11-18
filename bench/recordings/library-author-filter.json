@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "flowId": "library-author-filter",
+  "app": "library",
+  "name": "library-author-filter",
+  "task": "Search the catalog for {{keywords}} by author {{author}} and open the first match",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/library",
+  "params": {
+    "keywords": "history",
+    "author": "Tuchman"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "http://127.0.0.1:4173/library/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "{{keywords}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Keywords",
+        "label": "Keywords",
+        "placeholder": "Title, topic or subject",
+        "text": "",
+        "nearbyText": "City Library | Keywords",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "keywords",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-keywords",
+          "[data-testid=\"keywords-input\"]",
+          "form > div:nth-of-type(1) > div > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 183,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Advanced filters",
+        "label": "",
+        "placeholder": "",
+        "text": "Advanced filters",
+        "nearbyText": "City Library",
+        "tag": "summary",
+        "inputType": "",
+        "attrs": {},
+        "cssCandidates": [
+          "div > form > details > summary"
+        ],
+        "bbox": {
+          "x": 170,
+          "y": 226,
+          "width": 950,
+          "height": 22
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "{{author}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Author",
+        "label": "Author",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "City Library | Author",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "author",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-author",
+          "[data-testid=\"author-input\"]",
+          "details > div > div:nth-of-type(1) > input"
+        ],
+        "bbox": {
+          "x": 170,
+          "y": 278,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search catalog",
+        "label": "",
+        "placeholder": "",
+        "text": "Search catalog",
+        "nearbyText": "City Library",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-catalog-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 478,
+          "width": 122,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/catalog",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "The Guns of August",
+        "label": "",
+        "placeholder": "",
+        "text": "The Guns of August",
+        "nearbyText": "Catalog",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/library/item/1"
+        },
+        "cssCandidates": [
+          "ul > li:nth-of-type(1) > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 332,
+          "width": 165,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/catalog?keywords=history&author=Tuchman&yearFrom=&language="
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "lb.kw",
+    "lb.adv",
+    "lb.author",
+    "lb.search",
+    "lb.res.1"
+  ]
+}
