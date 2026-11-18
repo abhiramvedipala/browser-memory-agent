@@ -27,3 +27,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #11 LLM client with fixtures and budget guard, and step intent labels: Record/replay LLM client (replay default, missing fixture is an error), budget guard at 1.80 USD with running total, price table, ledger rows, and one-call step intent labelling with a deterministic fallback. Live fixtures are pending (no API key approved).
 
+- PR #12 bma record command: bma record and bma list: headed (or scripted) recording of a human workflow into SQLite through a guarded context; external URLs rejected before any browser starts.
+
