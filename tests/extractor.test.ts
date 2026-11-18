@@ -75,9 +75,9 @@ describe('describe(): names and labels', () => {
     expect((await describeIn('<a role="tab" href="/t">Tab</a>', 'a')).role).toBe('tab');
   });
 
-  it('reads the selected option as text for a select', async () => {
+  it('uses all option labels (not the selected one) as the text of a select', async () => {
     const t = await describeIn('<select aria-label="s"><option>One</option><option selected>Two</option></select>', 'select');
-    expect(t.text).toBe('Two');
+    expect(t.text).toBe('One Two');
   });
 });
 
