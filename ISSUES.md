@@ -188,10 +188,10 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] bma replay <name> --param k=v works
 
 ## #21 Tune thresholds on seeds 0-2 and freeze them
-- Label: feature | Milestone: Phase 3 | Branch: `phase-3/threshold-tuning` | Status: open
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/threshold-tuning` | Status: fixed in PR #21
 - What and why: Tune thresholds on seeds 0-2 and freeze them.
 - Acceptance checks:
-  - [ ] Oracle-driven pass collects step-level semantic scores on seeds 0-2 only
-  - [ ] Grid search picks min score and margin per embedder, wrong accepts penalised 10x
-  - [ ] Thresholds frozen in config/resolver.json with tuned=true
-  - [ ] npm run tune reproduces it, DECISIONS records the numbers
+  - [x] Oracle-driven pass collects step-level semantic scores on seeds 0-2 only
+  - [x] Grid search picks min score and margin per embedder, wrong accepts penalised 10x
+  - [x] Thresholds frozen in config/resolver.json with tuned=true
+  - [x] npm run tune reproduces it, DECISIONS records the numbers
