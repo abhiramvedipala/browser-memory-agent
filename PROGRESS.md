@@ -10,6 +10,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] Safety allowlist, route guard and password refusal (PR #4)
 - [x] SQLite schema, migrations and typed repository (PR #5)
 - [x] Benchmark metrics with bootstrap confidence intervals (PR #6)
+- [x] Phase 1 decisions, study guide and interview notes (PR #7)
 <!-- phase-1 -->
 
 ## Phase 2: Recorder
