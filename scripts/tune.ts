@@ -14,7 +14,7 @@ import { loadFlows } from '../src/bench/flows.ts';
 import { benchLocator, runGoldenStep } from '../src/bench/golden.ts';
 import { loadRecordings } from '../src/bench/recordings.ts';
 import { BENCH_ATTR } from '../src/bench/scorer.ts';
-import { range, tune, type TuneRow } from '../src/bench/tuning.ts';
+import { evaluate, range, tune, type TuneRow } from '../src/bench/tuning.ts';
 import { Store } from '../src/memory/store.ts';
 import { installPageScript } from '../src/recorder/page-script.ts';
 import { rebase } from '../src/recorder/url.ts';
@@ -33,6 +33,8 @@ const base = loadResolverConfig();
 const permissive = { ...base, minScore: 0, minMargin: 0, perEmbedder: {} };
 const embedders = { 'minilm-l6-v2-q8': makeEmbedder('minilm', store), 'hash-ngram-v1': makeEmbedder('hash', store) };
 const rows: Record<string, TuneRow[]> = { 'minilm-l6-v2-q8': [], 'hash-ngram-v1': [] };
+/** Target-absent rows: any acceptance is a wrong click. */
+const negatives: Record<string, TuneRow[]> = { 'minilm-l6-v2-q8': [], 'hash-ngram-v1': [] };
 let easy = 0;
 let total = 0;
 
@@ -68,11 +70,20 @@ try {
             if ('candidate' in role || sameName) {
               easy++;
             } else {
+              // the same page with the ground-truth element taken away: the resolver should refuse
+              const gtIdx = await page.evaluate(
+                ([attr, id]) => document.querySelector(`[${attr}="${id}"]`)?.getAttribute('data-bma-cand') ?? null,
+                [BENCH_ATTR, gt] as const,
+              );
+              const without = cands.filter((c) => String(c.idx) !== gtIdx);
               for (const [name, emb] of Object.entries(embedders)) {
                 const out = await resolveSemantic(target, cands, emb, permissive);
-                if (!out.best) continue;
-                const id = await page.locator(`[data-bma-cand="${out.best.idx}"]`).getAttribute(BENCH_ATTR);
-                rows[name]!.push({ score: out.score ?? 0, margin: out.margin ?? 0, correct: id === gt });
+                if (out.best) {
+                  const id = await page.locator(`[data-bma-cand="${out.best.idx}"]`).getAttribute(BENCH_ATTR);
+                  rows[name]!.push({ score: out.score ?? 0, margin: out.margin ?? 0, correct: id === gt });
+                }
+                const neg = await resolveSemantic(target, without, emb, permissive);
+                if (neg.best) negatives[name]!.push({ score: neg.score ?? 0, margin: neg.margin ?? 0, correct: false });
               }
             }
             await runGoldenStep(page, g, flow.params);
@@ -94,9 +105,12 @@ const margins = range(0, 0.2, 0.005);
 const perEmbedder: Record<string, { minScore: number; minMargin: number }> = {};
 const report: Record<string, unknown> = { seeds: TUNING_SEEDS, levels: LEVELS, stepsSeen: total, easyStepsSkipped: easy };
 for (const [name, r] of Object.entries(rows)) {
-  const best = tune(r, scores, margins);
+  const neg = negatives[name]!;
+  const best = tune([...r, ...neg], scores, margins);
+  const onPresent = evaluate(r, best.minScore, best.minMargin);
+  const onAbsent = evaluate(neg, best.minScore, best.minMargin);
   perEmbedder[name] = { minScore: best.minScore, minMargin: best.minMargin };
-  report[name] = { hardSteps: r.length, top1Correct: r.filter((x) => x.correct).length, chosen: best };
+  report[name] = { hardSteps: r.length, top1Correct: r.filter((x) => x.correct).length, absentRows: neg.length, chosen: best, onPresent, onAbsent };
   console.log(name, JSON.stringify(report[name]));
 }
 const frozen = { ...base, perEmbedder, tuned: true };
