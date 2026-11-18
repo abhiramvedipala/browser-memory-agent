@@ -129,3 +129,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Decisions D9-D10
   - [x] Study guide Phase 2 entries
   - [x] Interview notes Phase 2
+
+## #15 Embedder interface, MiniLM, hash embedder and SQLite cache
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/embedder` | Status: open
+- What and why: Embedder interface, MiniLM, hash embedder and SQLite cache.
+- Acceptance checks:
+  - [ ] Embedder interface with MiniLmEmbedder (transformers.js, models/ cache) and HashEmbedder
+  - [ ] Batches of at most 64 texts
+  - [ ] SQLite cache keyed by (model, text hash)
+  - [ ] Cosine ordering tests with HashEmbedder
