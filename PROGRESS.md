@@ -36,6 +36,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 <!-- phase-3 -->
 
 ## Phase 4: MCP server
+- [x] Stdio MCP server with six tools (PR #24)
 <!-- phase-4 -->
 
 ## Phase 5: Benchmark, results and docs

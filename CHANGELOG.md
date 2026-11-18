@@ -53,3 +53,7 @@ One entry per merged PR, grouped by phase.
 
 - PR #23 Phase 3 study guide and interview notes: Phase 3 study guide and interview notes.
 
+
+## Phase 4
+- PR #24 Stdio MCP server with six tools: Stdio MCP server (bma mcp) with record_workflow, list_workflows, get_workflow, replay_workflow, approve_submission and get_run; replays run in the background and pause with pending_approval.
+
