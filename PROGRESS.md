@@ -31,6 +31,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] Approval gate before form submission (PR #19)
 - [x] Replay engine and bma replay (PR #20)
 - [x] Tune thresholds on seeds 0-2 and freeze them (PR #21)
+- [x] Optional LLM tie-break over the top 3 candidates (PR #22)
 <!-- phase-3 -->
 
 ## Phase 4: MCP server

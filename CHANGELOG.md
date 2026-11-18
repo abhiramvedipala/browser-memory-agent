@@ -49,3 +49,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #21 Tune thresholds on seeds 0-2 and freeze them: Threshold tuning on seeds 0-2 only: oracle-driven pass over 353 hard steps, per-embedder thresholds frozen in config/resolver.json (tuned=true).
 
+- PR #22 Optional LLM tie-break over the top 3 candidates: Optional llm strategy: top-3 shortlist, answers 1-3 or none, unparseable means none; off by default, budgeted through the record/replay client.
+
