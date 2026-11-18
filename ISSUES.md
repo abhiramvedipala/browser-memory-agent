@@ -206,8 +206,8 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Unit tests with a fake transport
 
 ## #23 Phase 3 study guide and interview notes
-- Label: docs | Milestone: Phase 3 | Branch: `phase-3/docs-and-notes` | Status: open
+- Label: docs | Milestone: Phase 3 | Branch: `phase-3/docs-and-notes` | Status: fixed in PR #23
 - What and why: Phase 3 study guide and interview notes.
 - Acceptance checks:
-  - [ ] Study guide Phase 3 entries
-  - [ ] Interview notes Phase 3
+  - [x] Study guide Phase 3 entries
+  - [x] Interview notes Phase 3
