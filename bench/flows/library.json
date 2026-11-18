@@ -1,0 +1,155 @@
+[
+  {
+    "id": "library-author-filter",
+    "app": "library",
+    "task": "Search the catalog for {{keywords}} by author {{author}} and open the first match",
+    "params": {
+      "keywords": "history",
+      "author": "Tuchman"
+    },
+    "startUrl": "/library/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "lb.kw",
+        "value": "{{keywords}}"
+      },
+      {
+        "op": "click",
+        "id": "lb.adv"
+      },
+      {
+        "op": "fill",
+        "id": "lb.author",
+        "value": "{{author}}"
+      },
+      {
+        "op": "click",
+        "id": "lb.search"
+      },
+      {
+        "op": "click",
+        "id": "lb.res.1"
+      }
+    ],
+    "success": [
+      {
+        "event": "view_item",
+        "where": {
+          "itemId": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "library-spanish-available",
+    "app": "library",
+    "task": "Find an available {{language}} book about {{keywords}}",
+    "params": {
+      "keywords": "climate",
+      "language": "spanish"
+    },
+    "startUrl": "/library/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "lb.kw",
+        "value": "{{keywords}}"
+      },
+      {
+        "op": "click",
+        "id": "lb.adv"
+      },
+      {
+        "op": "select",
+        "id": "lb.lang",
+        "value": "{{language}}"
+      },
+      {
+        "op": "check",
+        "id": "lb.avail"
+      },
+      {
+        "op": "click",
+        "id": "lb.search"
+      },
+      {
+        "op": "click",
+        "id": "lb.res.6"
+      }
+    ],
+    "success": [
+      {
+        "event": "view_item",
+        "where": {
+          "itemId": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "library-place-hold",
+    "app": "library",
+    "task": "Place a hold on a {{keywords}} book for {{name}} at the {{branch}} branch",
+    "params": {
+      "keywords": "poetry",
+      "name": "Alex Demo",
+      "email": "alex@example.test",
+      "branch": "east"
+    },
+    "startUrl": "/library/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "lb.kw",
+        "value": "{{keywords}}"
+      },
+      {
+        "op": "click",
+        "id": "lb.search"
+      },
+      {
+        "op": "click",
+        "id": "lb.res.10"
+      },
+      {
+        "op": "click",
+        "id": "lb.hold.link"
+      },
+      {
+        "op": "fill",
+        "id": "lb.h.name",
+        "value": "{{name}}"
+      },
+      {
+        "op": "fill",
+        "id": "lb.h.email",
+        "value": "{{email}}"
+      },
+      {
+        "op": "select",
+        "id": "lb.h.branch",
+        "value": "{{branch}}"
+      },
+      {
+        "op": "check",
+        "id": "lb.h.notify"
+      },
+      {
+        "op": "click",
+        "id": "lb.h.submit"
+      }
+    ],
+    "success": [
+      {
+        "event": "hold",
+        "where": {
+          "itemId": 10,
+          "branch": "east",
+          "notify": true
+        }
+      }
+    ],
+    "submissions": 1
+  }
+]
