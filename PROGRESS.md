@@ -8,6 +8,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] Six demo apps and 20 benchmark flows (PR #2)
 - [x] Seeded DOM mutation engine (PR #3)
 - [x] Safety allowlist, route guard and password refusal (PR #4)
+- [x] SQLite schema, migrations and typed repository (PR #5)
 <!-- phase-1 -->
 
 ## Phase 2: Recorder

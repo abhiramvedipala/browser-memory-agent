@@ -41,10 +41,10 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Tests prove external navigation is blocked and zero external requests happen on a demo flow
 
 ## #5 SQLite schema, migrations and typed repository
-- Label: feature | Milestone: Phase 1 | Branch: `phase-1/sqlite-store` | Status: open
+- Label: feature | Milestone: Phase 1 | Branch: `phase-1/sqlite-store` | Status: fixed in PR #5
 - What and why: SQLite schema, migrations and typed repository.
 - Acceptance checks:
-  - [ ] schema.sql with the seven tables
-  - [ ] Migrations driven by PRAGMA user_version
-  - [ ] Typed repository functions for workflows, steps, runs, run_steps, approvals, llm_calls, embeddings
-  - [ ] Tests on an in-memory database
+  - [x] schema.sql with the seven tables
+  - [x] Migrations driven by PRAGMA user_version
+  - [x] Typed repository functions for workflows, steps, runs, run_steps, approvals, llm_calls, embeddings
+  - [x] Tests on an in-memory database
