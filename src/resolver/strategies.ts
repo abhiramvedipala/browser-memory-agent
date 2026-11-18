@@ -2,7 +2,7 @@ import type { Page } from 'playwright';
 import { cosine, type Embedder } from '../embeddings/embedder.ts';
 import type { Target } from '../memory/types.ts';
 import { candidateLocator, contextText, identityText, type Candidate } from '../replay/candidates.ts';
-import type { ResolverConfig } from './config.ts';
+import { thresholdsFor, type ResolverConfig } from './config.ts';
 import type { ScoredCandidate } from './types.ts';
 
 const sameName = (a: string, b: string) => a.trim().toLowerCase() === b.trim().toLowerCase();
@@ -80,6 +80,7 @@ export async function resolveSemantic(target: Target, cands: Candidate[], embedd
   const cw = cfg.contextWeight;
   const hasCtx = contextText(target) !== '';
   const w = cfg.weights;
+  const { minScore, minMargin } = thresholdsFor(cfg, embedder.name);
   const denom = 1 + w.role + w.name + w.label + w.placeholder;
   const scored = live.map((c, i) => {
     const idCos = Math.max(0, cosine(tId, vecs[2 + i]!));
@@ -97,8 +98,8 @@ export async function resolveSemantic(target: Target, cands: Candidate[], embedd
   const top: ScoredCandidate[] = scored.slice(0, 5).map((s) => ({ idx: s.c.idx, role: s.c.role, name: s.c.accessibleName, score: round(s.score), cosine: round(s.cos) }));
   const best = scored[0]!;
   const margin = best.score - (scored[1]?.score ?? 0);
-  if (best.score < cfg.minScore) return { top, score: best.score, margin, accepted: false, reason: `best score ${best.score.toFixed(3)} below ${cfg.minScore}` };
-  if (margin < cfg.minMargin) return { top, score: best.score, margin, accepted: false, reason: `margin ${margin.toFixed(3)} over runner-up below ${cfg.minMargin}` };
+  if (best.score < minScore) return { top, score: best.score, margin, accepted: false, reason: `best score ${best.score.toFixed(3)} below ${minScore}` };
+  if (margin < minMargin) return { top, score: best.score, margin, accepted: false, reason: `margin ${margin.toFixed(3)} over runner-up below ${minMargin}` };
   return { top, best: best.c, score: best.score, margin, accepted: true, reason: 'accepted' };
 }
 
