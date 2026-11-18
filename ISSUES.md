@@ -65,3 +65,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] DECISIONS.md covers demo-app, session, mutation and metric choices
   - [x] STUDY-GUIDE lists Phase 1 PRs in reading order
   - [x] INTERVIEW-NOTES has the Phase 1 section
+
+## #8 In-page target extractor
+- Label: feature | Milestone: Phase 2 | Branch: `phase-2/target-extractor` | Status: open
+- What and why: In-page target extractor.
+- Acceptance checks:
+  - [ ] In-page script computes role, accessible name, label, placeholder, text, nearby text, attrs, CSS candidates, bbox for an element
+  - [ ] Never reads data-bench-id
+  - [ ] Accessible names agree with Playwright getByRole on every demo-app control
+  - [ ] Unit tests on fixture HTML pages
