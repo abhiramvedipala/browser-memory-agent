@@ -103,3 +103,13 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Every recorded call is written to the llm_calls ledger
   - [x] One call per workflow writes a short intent per step, with a deterministic fallback
   - [x] Works fully in replay mode
+
+## #12 bma record command
+- Label: feature | Milestone: Phase 2 | Branch: `phase-2/record-cli` | Status: fixed in PR #12
+- What and why: bma record command.
+- Acceptance checks:
+  - [x] bma record --url --name opens headed Chromium and records a human workflow into SQLite
+  - [x] Refuses non-local URLs before launching a browser
+  - [x] Refused fields are reported and nothing sensitive is stored
+  - [x] bma list shows saved workflows
+  - [x] Tested headless with a scripted driver
