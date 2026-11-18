@@ -41,3 +41,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #17 Resolver chain: css, role, semantic with refuse-rather-than-guess: css, role and semantic resolver strategies with a verified full chain, score and margin thresholds, and the refuse-rather-than-guess rule; identity and context embedded separately.
 
+- PR #18 Retries with backoff and failure screenshots: resolveWithRetry: up to 3 attempts with backoff for late elements, and on refusal a full-page screenshot plus a scored-candidate dump under runs/<run_id>/.
+

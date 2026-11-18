@@ -159,10 +159,10 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Unit tests for each strategy, ties, decoys and low-margin refusal
 
 ## #18 Retries with backoff and failure screenshots
-- Label: feature | Milestone: Phase 3 | Branch: `phase-3/retry-and-screenshots` | Status: open
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/retry-and-screenshots` | Status: fixed in PR #18
 - What and why: Retries with backoff and failure screenshots.
 - Acceptance checks:
-  - [ ] Up to 3 attempts over at most 3 s so late elements are found
-  - [ ] Final failure writes a full-page screenshot and the scored candidate list under runs/<run_id>/
-  - [ ] Retry count is returned for the run log
-  - [ ] Tested with delayed and absent elements
+  - [x] Up to 3 attempts over at most 3 s so late elements are found
+  - [x] Final failure writes a full-page screenshot and the scored candidate list under runs/<run_id>/
+  - [x] Retry count is returned for the run log
+  - [x] Tested with delayed and absent elements

@@ -27,6 +27,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] Embedder interface, MiniLM, hash embedder and SQLite cache (PR #15)
 - [x] Candidate extraction with descriptions (PR #16)
 - [x] Resolver chain: css, role, semantic with refuse-rather-than-guess (PR #17)
+- [x] Retries with backoff and failure screenshots (PR #18)
 <!-- phase-3 -->
 
 ## Phase 4: MCP server
