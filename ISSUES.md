@@ -149,11 +149,11 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] candidateText() builds the embedding text for targets and candidates
 
 ## #17 Resolver chain: css, role, semantic with refuse-rather-than-guess
-- Label: feature | Milestone: Phase 3 | Branch: `phase-3/resolver-chain` | Status: open
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/resolver-chain` | Status: fixed in PR #17
 - What and why: Resolver chain: css, role, semantic with refuse-rather-than-guess.
 - Acceptance checks:
-  - [ ] css strategy needs exactly one match with the right role
-  - [ ] role strategy needs exactly one exact getByRole match
-  - [ ] semantic strategy combines cosine with role, name, label and placeholder terms and needs a score and a margin
-  - [ ] Low-confidence steps are refused, never clicked
-  - [ ] Unit tests for each strategy, ties, decoys and low-margin refusal
+  - [x] css strategy needs exactly one match with the right role
+  - [x] role strategy needs exactly one exact getByRole match
+  - [x] semantic strategy combines cosine with role, name, label and placeholder terms and needs a score and a margin
+  - [x] Low-confidence steps are refused, never clicked
+  - [x] Unit tests for each strategy, ties, decoys and low-margin refusal

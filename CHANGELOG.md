@@ -39,3 +39,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #16 Candidate extraction with descriptions: In-page collect() plus collectCandidates(): visible interactive elements with descriptions, documented policy for hidden, disabled and offscreen elements, and candidateText() for embeddings.
 
+- PR #17 Resolver chain: css, role, semantic with refuse-rather-than-guess: css, role and semantic resolver strategies with a verified full chain, score and margin thresholds, and the refuse-rather-than-guess rule; identity and context embedded separately.
+
