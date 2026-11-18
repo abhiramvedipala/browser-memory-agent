@@ -29,3 +29,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #12 bma record command: bma record and bma list: headed (or scripted) recording of a human workflow into SQLite through a guarded context; external URLs rejected before any browser starts.
 
+- PR #13 Recording format documentation with a real exported example: docs/recording-format.md documents every table and field with a real example exported by script; bma export prints a stored workflow.
+
