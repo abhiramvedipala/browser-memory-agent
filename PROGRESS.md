@@ -38,6 +38,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 ## Phase 4: MCP server
 - [x] Stdio MCP server with six tools (PR #24)
 - [x] Tuned thresholds accept a wrong element when the target is absent (PR #25)
+- [x] MCP tools validate every URL against the allowlist (PR #26)
 <!-- phase-4 -->
 
 ## Phase 5: Benchmark, results and docs

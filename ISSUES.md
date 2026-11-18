@@ -227,3 +227,11 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Tuning includes target-absent negative rows
   - [x] resolver and replay refusal tests pass
   - [x] ISSUES records that PRs 21-24 merged with these two tests failing
+
+## #26 MCP tools validate every URL against the allowlist
+- Label: feature | Milestone: Phase 4 | Branch: `phase-4/mcp-safety` | Status: fixed in PR #26
+- What and why: MCP tools validate every URL against the allowlist.
+- Acceptance checks:
+  - [x] Every tool taking a URL rejects anything but the local demo server with a clear message
+  - [x] Tool descriptions state local demo apps only and that logins and CAPTCHAs are never automated
+  - [x] Tests cover each URL-taking tool
