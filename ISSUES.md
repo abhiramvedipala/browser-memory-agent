@@ -204,3 +204,10 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Off by default; only the semantic-minilm+llm strategy uses it
   - [x] Uses the record/replay client, budget guard and ledger
   - [x] Unit tests with a fake transport
+
+## #23 Phase 3 study guide and interview notes
+- Label: docs | Milestone: Phase 3 | Branch: `phase-3/docs-and-notes` | Status: open
+- What and why: Phase 3 study guide and interview notes.
+- Acceptance checks:
+  - [ ] Study guide Phase 3 entries
+  - [ ] Interview notes Phase 3
