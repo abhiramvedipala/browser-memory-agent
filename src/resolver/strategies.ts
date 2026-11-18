@@ -15,7 +15,7 @@ export interface Hit {
 /** css: a recorded selector that matches exactly one element, and that element has the recorded role. */
 export async function resolveCss(page: Page, target: Target, cands: Candidate[]): Promise<Hit | { miss: string }> {
   for (const css of target.cssCandidates) {
-    let count = 0;
+    let count: number;
     let idxAttr: string | null = null;
     try {
       const loc = page.locator(css);
