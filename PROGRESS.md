@@ -20,6 +20,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] LLM client with fixtures and budget guard, and step intent labels (PR #11)
 - [x] bma record command (PR #12)
 - [x] Recording format documentation with a real exported example (PR #13)
+- [x] Phase 2 decisions, study guide and interview notes (PR #14)
 <!-- phase-2 -->
 
 ## Phase 3: Replayer, resolver and approval gate

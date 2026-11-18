@@ -123,9 +123,9 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] bma export prints a stored workflow as JSON
 
 ## #14 Phase 2 decisions, study guide and interview notes
-- Label: docs | Milestone: Phase 2 | Branch: `phase-2/docs-and-notes` | Status: open
+- Label: docs | Milestone: Phase 2 | Branch: `phase-2/docs-and-notes` | Status: fixed in PR #14
 - What and why: Phase 2 decisions, study guide and interview notes.
 - Acceptance checks:
-  - [ ] Decisions D9-D10
-  - [ ] Study guide Phase 2 entries
-  - [ ] Interview notes Phase 2
+  - [x] Decisions D9-D10
+  - [x] Study guide Phase 2 entries
+  - [x] Interview notes Phase 2

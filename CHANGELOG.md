@@ -31,3 +31,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #13 Recording format documentation with a real exported example: docs/recording-format.md documents every table and field with a real example exported by script; bma export prints a stored workflow.
 
+- PR #14 Phase 2 decisions, study guide and interview notes: Phase 2 decisions D9-D11, study guide and interview notes.
+
