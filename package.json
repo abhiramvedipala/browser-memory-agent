@@ -1,0 +1,39 @@
+{
+  "name": "browser-memory-agent",
+  "version": "0.1.0",
+  "description": "Procedural memory for browser agents: record a web workflow once, replay it on mutated pages by semantic element matching.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "bma": "./bin/bma.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "bash scripts/check.sh",
+    "demo": "tsx demo-apps/server.ts",
+    "bench:smoke": "echo 'bench smoke: not wired yet'"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.10.0",
+    "@huggingface/transformers": "4.3.2",
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "better-sqlite3": "13.2.0",
+    "playwright": "1.65.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "22.20.5",
+    "eslint": "10.15.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.73.0",
+    "vitest": "5.1.0"
+  }
+}
