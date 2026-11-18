@@ -249,5 +249,37 @@
     return out;
   }
 
-  window.__bma = { collect, describe, isVisible, isDisabled, roleOf, accessibleName, labelText, nearbyText, interactiveElements, INTERACTIVE_SELECTOR, norm };
+  /** Facts the approval gate needs about an element and the form it sits in. */
+  function formInfo(el) {
+    const form = el.form || el.closest('form');
+    const type = el.tagName === 'INPUT' || el.tagName === 'BUTTON' ? (el.getAttribute('type') || (el.tagName === 'BUTTON' ? 'submit' : 'text')).toLowerCase() : '';
+    return {
+      tag: el.tagName.toLowerCase(),
+      type,
+      name: accessibleName(el),
+      inForm: !!form,
+      method: form ? (form.getAttribute('method') || 'get').toLowerCase() : '',
+    };
+  }
+
+  /** Label and value of every visible control in the element's form. Passwords are never read. */
+  function formSummary(el) {
+    const form = el.form || el.closest('form');
+    if (!form) return [];
+    const rows = [];
+    for (const c of form.querySelectorAll('input,select,textarea')) {
+      const t = (c.getAttribute('type') || '').toLowerCase();
+      if (['hidden', 'submit', 'button', 'image', 'reset'].includes(t) || !isVisible(c)) continue;
+      const label = accessibleName(c) || c.getAttribute('name') || c.tagName.toLowerCase();
+      let value;
+      if (t === 'password') value = '(hidden)';
+      else if (t === 'checkbox' || t === 'radio') value = c.checked ? 'checked' : 'not checked';
+      else if (c.tagName === 'SELECT') value = c.selectedOptions[0] ? norm(c.selectedOptions[0].textContent) : '';
+      else value = c.value;
+      rows.push({ label: clip(label, 80), value: clip(String(value), 200) });
+    }
+    return rows;
+  }
+
+  window.__bma = { formInfo, formSummary, collect, describe, isVisible, isDisabled, roleOf, accessibleName, labelText, nearbyText, interactiveElements, INTERACTIVE_SELECTOR, norm };
 })();
