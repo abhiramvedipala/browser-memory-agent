@@ -30,3 +30,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Same seed gives the same DOM
   - [x] data-bench-id preserved on every original interactive element
   - [x] Each operator unit-tested
+
+## #4 Safety allowlist, route guard and password refusal
+- Label: feature | Milestone: Phase 1 | Branch: `phase-1/safety-allowlist` | Status: fixed in PR #4
+- What and why: Safety allowlist, route guard and password refusal.
+- Acceptance checks:
+  - [x] src/safety/allowlist.ts checks every navigation URL
+  - [x] Context route guard aborts any non-local request and counts them
+  - [x] Recorder-side check refuses type=password and similar sensitive fields
+  - [x] Tests prove external navigation is blocked and zero external requests happen on a demo flow
