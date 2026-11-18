@@ -84,3 +84,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Typed values matching a flow param become {{name}}
   - [x] Initial navigation recorded, navigations caused by interactions are not
   - [x] Tests record real golden flows
+
+## #10 Deterministic golden recordings of all 20 flows
+- Label: feature | Milestone: Phase 2 | Branch: `phase-2/golden-recordings` | Status: open
+- What and why: Deterministic golden recordings of all 20 flows.
+- Acceptance checks:
+  - [ ] npm run record:golden records every flow through the real recorder with no LLM
+  - [ ] Recordings exported as JSON under bench/recordings with a ground-truth sidecar
+  - [ ] Importer loads a recording into SQLite
+  - [ ] A test re-records and diffs against the committed files
