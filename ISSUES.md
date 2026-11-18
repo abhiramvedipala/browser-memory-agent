@@ -222,7 +222,7 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
 
 ## #25 Tuned thresholds accept a wrong element when the target is absent
 - Label: bug | Milestone: Phase 4 | Branch: `phase-4/fix-tuning-negatives` | Status: open
-- What and why: Tuned thresholds accept a wrong element when the target is absent.
+- What and why: Tuned thresholds accept a wrong element when the target is absent. GitHub issue #1. Note: local PRs #21 to #24 were merged while these two tests failed, because the local merge script piped check.sh into tail and read tail's exit code; the script now checks check.sh's own exit code.
 - Acceptance checks:
   - [ ] Tuning includes target-absent negative rows
   - [ ] resolver and replay refusal tests pass
