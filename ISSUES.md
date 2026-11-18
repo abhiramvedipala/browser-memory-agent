@@ -178,11 +178,11 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Denied or timed-out approvals never act
 
 ## #20 Replay engine and bma replay
-- Label: feature | Milestone: Phase 3 | Branch: `phase-3/replay-engine` | Status: open
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/replay-engine` | Status: fixed in PR #20
 - What and why: Replay engine and bma replay.
 - Acceptance checks:
-  - [ ] replayWorkflow executes steps through the resolver chain with retries and the approval gate
-  - [ ] Logs runs and run_steps, checks URL patterns between steps
-  - [ ] A denied or timed-out approval leaves the server submission count at 0
-  - [ ] Starting from a non-local base is refused
-  - [ ] bma replay <name> --param k=v works
+  - [x] replayWorkflow executes steps through the resolver chain with retries and the approval gate
+  - [x] Logs runs and run_steps, checks URL patterns between steps
+  - [x] A denied or timed-out approval leaves the server submission count at 0
+  - [x] Starting from a non-local base is refused
+  - [x] bma replay <name> --param k=v works

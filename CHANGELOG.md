@@ -45,3 +45,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #19 Approval gate before form submission: Approval gate: rules for what pauses a run, approvals rows with field summary and screenshot, CLI (default No), MCP-manual and deny-all providers, timeout as deny, and a benchmark auto-approve flag refused for non-local URLs.
 
+- PR #20 Replay engine and bma replay: replayWorkflow plus bma replay: guarded context, param check, retries, approval gate, run and run_step logging, observe hook for the scorer. Denied and timed-out approvals leave the server submission count at 0.
+
