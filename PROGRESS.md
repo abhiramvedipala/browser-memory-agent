@@ -32,6 +32,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] Replay engine and bma replay (PR #20)
 - [x] Tune thresholds on seeds 0-2 and freeze them (PR #21)
 - [x] Optional LLM tie-break over the top 3 candidates (PR #22)
+- [x] Phase 3 study guide and interview notes (PR #23)
 <!-- phase-3 -->
 
 ## Phase 4: MCP server

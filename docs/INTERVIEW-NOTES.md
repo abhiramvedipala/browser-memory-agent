@@ -55,3 +55,30 @@ Recording faithfully: Enter in a field makes the browser click the default butto
 
 ### Files to open
 `src/page/bma-page.js`, `src/recorder/recorder.ts`, `src/llm/client.ts`, `tests/recorder.test.ts`.
+
+## Phase 3: replayer, resolver and approval gate
+
+### What this phase built
+- A resolver chain: recorded CSS (verified), Playwright role locator, then semantic matching with MiniLM embeddings plus role, name, label and placeholder bonuses, accepted only above a score floor and a margin over the runner-up.
+- Retries with backoff (attempts at 0, 1 and 3 s) and failure screenshots with the scored candidates.
+- An approval gate that pauses before any state-changing submission and writes an approvals row; deny, timeout and errors all mean "do not act".
+- The replay engine and `bma replay`, and thresholds tuned on seeds 0-2 only.
+
+### Key decisions (and "why not X?")
+- Refuse rather than guess. Why not click the best match? A wrong click (submitting the wrong form) is worse than a stopped run a human can resume.
+- Identity and context embedded separately (contextWeight 0.25). Why not one string? Neighbours share context, which made "Search" look 0.82 similar to "Clear everything".
+- css hits are verified in the full chain but not in css-only. Why? css-only must behave like a naive tool to be an honest baseline; the chain should not inherit its positional mistakes.
+- Per-embedder thresholds (D13). Why not one pair? Cosine scales differ between models.
+
+### Hardest problem
+Getting thresholds without cheating. Tuning on the benchmark seeds would inflate results, and tuning on full replays mixes resolver errors with cascading failures. The oracle-driven pass acts on the ground-truth element at each step, so every step is scored on a realistic page, and only steps that css and role cannot resolve are used.
+
+### Likely questions
+1. *What is an accessible name?* The text assistive technology announces for an element: from aria-labelledby, aria-label, a label, the content, or title. Playwright's `getByRole(role, {name})` matches it.
+2. *Why embeddings at all if role locators exist?* Role locators need the exact name; synonyms ("Add to basket") and label rewrites break them. Embeddings score meaning, not spelling.
+3. *What is cosine similarity?* The cosine of the angle between two vectors: 1 for the same direction, 0 for unrelated. Normalized sentence embeddings make it a cheap similarity score.
+4. *How do you avoid clicking a decoy?* The margin rule: if the best candidate does not clearly beat the runner-up, the step is refused.
+5. *What happens on a submit?* The run pauses, writes the field summary and a screenshot, and waits for y/N (default No) or an MCP approval; a denial leaves the server submission count at 0 (tested).
+
+### Files to open
+`src/resolver/chain.ts`, `src/resolver/strategies.ts`, `src/replay/engine.ts`, `src/replay/approval.ts`, `scripts/tune.ts`.

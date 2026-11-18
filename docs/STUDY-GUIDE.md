@@ -20,6 +20,16 @@ How to read this repo before an interview. Updated at the end of every phase.
 11. PR #12 `phase-2/record-cli`: `src/recorder/session.ts`, `src/cli.ts`.
 12. PR #13 `phase-2/recording-format-doc`: `docs/recording-format.md`.
 
+### Phase 3: replayer, resolver and approval gate
+13. PR #15 `phase-3/embedder`: `src/embeddings/embedder.ts`, then `minilm.ts`.
+14. PR #16 `phase-3/candidate-extraction`: `collect()` in `src/page/bma-page.js`, `src/replay/candidates.ts`.
+15. PR #17 `phase-3/resolver-chain`: `src/resolver/strategies.ts`, then `chain.ts` (the core of the project).
+16. PR #18 `phase-3/retry-and-screenshots`: `src/replay/retry.ts`.
+17. PR #19 `phase-3/approval-gate`: `src/replay/approval.ts`, `needsApproval()` and `gateStep()`.
+18. PR #20 `phase-3/replay-engine`: `src/replay/engine.ts`, `replayWorkflow()`.
+19. PR #21 `phase-3/threshold-tuning`: `scripts/tune.ts`, `config/tuning-report.json`.
+20. PR #22 `phase-3/llm-tiebreak`: `src/llm/tiebreak.ts`.
+
 ## Reading paths
 - 15 minutes: `demo-apps/mutate.ts` (what the benchmark does to pages), `src/safety/allowlist.ts`, `src/memory/schema.sql`.
 - 60 minutes: add `demo-apps/server.ts`, one app plus its flow JSON, `src/bench/flows.ts`, `src/bench/metrics.ts` and their tests.

@@ -51,3 +51,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #22 Optional LLM tie-break over the top 3 candidates: Optional llm strategy: top-3 shortlist, answers 1-3 or none, unparseable means none; off by default, budgeted through the record/replay client.
 
+- PR #23 Phase 3 study guide and interview notes: Phase 3 study guide and interview notes.
+
