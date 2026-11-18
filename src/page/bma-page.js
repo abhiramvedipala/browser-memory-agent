@@ -124,8 +124,8 @@
     const tag = el.tagName.toLowerCase();
     if (tag === 'input') return '';
     if (tag === 'select') {
-      const o = el.selectedOptions && el.selectedOptions[0];
-      return o ? norm(o.textContent) : '';
+      // option labels are stable across state changes, the selected one is not
+      return clip(Array.from(el.options).map((o) => norm(o.textContent)).join(' '), 160);
     }
     return clip(textContentOf(el), 160);
   }
