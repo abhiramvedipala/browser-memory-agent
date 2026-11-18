@@ -211,3 +211,11 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
 - Acceptance checks:
   - [x] Study guide Phase 3 entries
   - [x] Interview notes Phase 3
+
+## #24 Stdio MCP server with six tools
+- Label: feature | Milestone: Phase 4 | Branch: `phase-4/mcp-server` | Status: open
+- What and why: Stdio MCP server with six tools.
+- Acceptance checks:
+  - [ ] bma mcp starts a stdio MCP server
+  - [ ] Tools record_workflow, list_workflows, get_workflow, replay_workflow, approve_submission, get_run with zod schemas
+  - [ ] replay_workflow returns a summary or pending_approval with fields and a screenshot path
