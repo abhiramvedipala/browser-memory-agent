@@ -219,3 +219,11 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] bma mcp starts a stdio MCP server
   - [x] Tools record_workflow, list_workflows, get_workflow, replay_workflow, approve_submission, get_run with zod schemas
   - [x] replay_workflow returns a summary or pending_approval with fields and a screenshot path
+
+## #25 Tuned thresholds accept a wrong element when the target is absent
+- Label: bug | Milestone: Phase 4 | Branch: `phase-4/fix-tuning-negatives` | Status: open
+- What and why: Tuned thresholds accept a wrong element when the target is absent.
+- Acceptance checks:
+  - [ ] Tuning includes target-absent negative rows
+  - [ ] resolver and replay refusal tests pass
+  - [ ] ISSUES records that PRs 21-24 merged with these two tests failing
