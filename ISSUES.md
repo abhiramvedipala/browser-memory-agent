@@ -50,10 +50,10 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Tests on an in-memory database
 
 ## #6 Benchmark metrics with bootstrap confidence intervals
-- Label: feature | Milestone: Phase 1 | Branch: `phase-1/bench-metrics` | Status: open
+- Label: feature | Milestone: Phase 1 | Branch: `phase-1/bench-metrics` | Status: fixed in PR #6
 - What and why: Benchmark metrics with bootstrap confidence intervals.
 - Acceptance checks:
-  - [ ] Replay record type and step outcome kinds
-  - [ ] Success, step accuracy, wrong-element, refusal and recovery rates with 95 percent bootstrap CIs over flows
-  - [ ] Median and p95 time, tokens and cost per flow, retry stats, grouping by operator
-  - [ ] Unit tests on hand-computed cases: empty, all failures, ties
+  - [x] Replay record type and step outcome kinds
+  - [x] Success, step accuracy, wrong-element, refusal and recovery rates with 95 percent bootstrap CIs over flows
+  - [x] Median and p95 time, tokens and cost per flow, retry stats, grouping by operator
+  - [x] Unit tests on hand-computed cases: empty, all failures, ties

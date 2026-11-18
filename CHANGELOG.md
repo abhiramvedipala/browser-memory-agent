@@ -13,3 +13,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #5 SQLite schema, migrations and typed repository: SQLite schema with seven tables, user_version migrations and a typed Store repository (versioned workflows, runs, approvals, LLM ledger, embedding cache).
 
+- PR #6 Benchmark metrics with bootstrap confidence intervals: Pure metric functions: success, step accuracy, wrong-element, refusal, recovery vs css-only, time percentiles, retry stats and per-key breakdowns, each with a seeded 95% bootstrap CI that resamples flows.
+
