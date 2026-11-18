@@ -138,3 +138,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Batches of at most 64 texts
   - [x] SQLite cache keyed by (model, text hash)
   - [x] Cosine ordering tests with HashEmbedder
+
+## #16 Candidate extraction with descriptions
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/candidate-extraction` | Status: open
+- What and why: Candidate extraction with descriptions.
+- Acceptance checks:
+  - [ ] Collect every visible interactive element with its description
+  - [ ] Hidden elements excluded; disabled elements flagged and never scored; offscreen-but-scrollable elements included
+  - [ ] Candidates never contain the ground-truth id
+  - [ ] candidateText() builds the embedding text for targets and candidates
