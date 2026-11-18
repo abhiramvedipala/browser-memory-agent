@@ -4,6 +4,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 
 ## Phase 1: Demo apps, store and harness
 - [x] scaffold (on `main`)
+- [x] Demo server with bench state endpoints (PR #1)
 <!-- phase-1 -->
 
 ## Phase 2: Recorder
