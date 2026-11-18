@@ -1,0 +1,10 @@
+.env
+node_modules/
+dist/
+models/
+*.db
+*.db-journal
+runs/
+test-results/
+playwright-report/
+.DS_Store
