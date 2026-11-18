@@ -20,3 +20,13 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] 20 flows defined in bench/flows/*.json with task, params, start URL, golden steps and success check
   - [x] Every interactive element carries data-bench-id
   - [x] Golden script passes each flow success check on mut=none
+
+## #3 Seeded DOM mutation engine
+- Label: feature | Milestone: Phase 1 | Branch: `phase-1/mutation-engine` | Status: fixed in PR #3
+- What and why: Seeded DOM mutation engine.
+- Acceptance checks:
+  - [x] Operators: ids, classes, wrap, testids, reorder, synonyms, labels, move, decoy, urlpath, delay
+  - [x] Levels none/light/medium/heavy plus single-operator mode
+  - [x] Same seed gives the same DOM
+  - [x] data-bench-id preserved on every original interactive element
+  - [x] Each operator unit-tested

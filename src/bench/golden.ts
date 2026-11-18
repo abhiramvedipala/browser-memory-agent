@@ -26,8 +26,14 @@ export async function runGoldenStep(page: Page, step: GoldenStep, params: Record
 }
 
 /** Drive a whole flow the way a careful human would, using ground-truth ids. */
-export async function runGolden(page: Page, flow: Flow, base: string, params: Record<string, string> = flow.params): Promise<void> {
-  await page.goto(`${base}${flow.startUrl}`);
+export async function runGolden(
+  page: Page,
+  flow: Flow,
+  base: string,
+  params: Record<string, string> = flow.params,
+  startQuery = '',
+): Promise<void> {
+  await page.goto(`${base}${flow.startUrl}${startQuery}`);
   for (const step of flow.steps) await runGoldenStep(page, step, params);
   await page.waitForLoadState('load');
 }

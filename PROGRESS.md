@@ -6,6 +6,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] scaffold (on `main`)
 - [x] Demo server with bench state endpoints (PR #1)
 - [x] Six demo apps and 20 benchmark flows (PR #2)
+- [x] Seeded DOM mutation engine (PR #3)
 <!-- phase-1 -->
 
 ## Phase 2: Recorder
