@@ -1,0 +1,40 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "levels": [
+    "light",
+    "medium",
+    "heavy"
+  ],
+  "stepsSeen": 1008,
+  "easyStepsSkipped": 655,
+  "minilm-l6-v2-q8": {
+    "hardSteps": 353,
+    "top1Correct": 317,
+    "chosen": {
+      "minScore": 0.44,
+      "minMargin": 0.06,
+      "utility": 198,
+      "acceptedCorrect": 208,
+      "acceptedWrong": 1,
+      "refused": 144,
+      "total": 353
+    }
+  },
+  "hash-ngram-v1": {
+    "hardSteps": 353,
+    "top1Correct": 305,
+    "chosen": {
+      "minScore": 0.37,
+      "minMargin": 0.105,
+      "utility": 192,
+      "acceptedCorrect": 192,
+      "acceptedWrong": 0,
+      "refused": 161,
+      "total": 353
+    }
+  }
+}

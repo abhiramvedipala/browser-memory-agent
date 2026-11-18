@@ -8,6 +8,8 @@ export const ResolverConfigSchema = z.object({
   minScore: z.number(),
   /** Lead the best candidate must have over the runner-up. */
   minMargin: z.number(),
+  /** Per-embedder overrides of minScore and minMargin (cosine scales differ between models). */
+  perEmbedder: z.record(z.string(), z.object({ minScore: z.number(), minMargin: z.number() })).default({}),
   /** Share of the cosine taken from nearby text; the rest comes from the element's own identity. */
   contextWeight: z.number(),
   weights: z.object({ role: z.number(), name: z.number(), label: z.number(), placeholder: z.number() }),
@@ -23,4 +25,9 @@ export const CONFIG_PATH = join(ROOT, 'config', 'resolver.json');
 
 export function loadResolverConfig(path = CONFIG_PATH): ResolverConfig {
   return ResolverConfigSchema.parse(JSON.parse(readFileSync(path, 'utf8')));
+}
+
+/** Thresholds for one embedder: its tuned pair if present, else the defaults. */
+export function thresholdsFor(cfg: ResolverConfig, embedderName: string): { minScore: number; minMargin: number } {
+  return cfg.perEmbedder[embedderName] ?? { minScore: cfg.minScore, minMargin: cfg.minMargin };
 }
