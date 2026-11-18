@@ -140,9 +140,7 @@ export async function startDemoServer(opts: DemoServerOptions = {}): Promise<Dem
       if (out.redirect) return finish(303, '', 'text/plain', { location: out.redirect });
       if (!out.page) return finish(500, 'app returned nothing', 'text/plain');
       const page =
-        opts.mutator && mut.level !== 'none'
-          ? opts.mutator(out.page, { level: mut.level, seed, path: norm, only: mut.only })
-          : out.page;
+        opts.mutator ? opts.mutator(out.page, { level: mut.level, seed, path: norm, only: mut.only }) : out.page;
       return finish(out.status ?? 200, serializeDocument(page));
     } catch (err) {
       return finish(500, `error: ${(err as Error).message}`, 'text/plain');
