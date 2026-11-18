@@ -59,3 +59,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #25 Tuned thresholds accept a wrong element when the target is absent: Threshold tuning now includes target-absent negative rows; thresholds re-frozen (MiniLM 0.60/0.015, hash 0.53/0.03). Fixes the two refusal tests failing on main.
 
+- PR #26 MCP tools validate every URL against the allowlist: Tests that every URL-taking MCP tool rejects anything but the local demo server, before a browser starts, and that tool descriptions state the boundary.
+
