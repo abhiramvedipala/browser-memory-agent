@@ -12,6 +12,14 @@ How to read this repo before an interview. Updated at the end of every phase.
 5. PR #5 `phase-1/sqlite-store`: `src/memory/schema.sql`, then `store.ts`.
 6. PR #6 `phase-1/bench-metrics`: `src/bench/metrics.ts`, `bootstrapCI()`.
 
+### Phase 2: recorder
+7. PR #8 `phase-2/target-extractor`: `src/page/bma-page.js`, `describe()`.
+8. PR #9 `phase-2/event-recorder`: `src/page/bma-record.js`, then `src/recorder/recorder.ts`.
+9. PR #10 `phase-2/golden-recordings`: `src/recorder/golden.ts`, `bench/recordings/*.json`.
+10. PR #11 `phase-2/intent-labels`: `src/llm/client.ts` (record/replay), `budget.ts`, `intents.ts`.
+11. PR #12 `phase-2/record-cli`: `src/recorder/session.ts`, `src/cli.ts`.
+12. PR #13 `phase-2/recording-format-doc`: `docs/recording-format.md`.
+
 ## Reading paths
 - 15 minutes: `demo-apps/mutate.ts` (what the benchmark does to pages), `src/safety/allowlist.ts`, `src/memory/schema.sql`.
 - 60 minutes: add `demo-apps/server.ts`, one app plus its flow JSON, `src/bench/flows.ts`, `src/bench/metrics.ts` and their tests.

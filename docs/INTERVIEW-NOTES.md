@@ -29,3 +29,29 @@ Keeping the mutated pages functional. Decoys must be inert, aliased `/v2` links 
 
 ### Files to open
 `demo-apps/mutate.ts`, `src/safety/guard.ts`, `src/memory/store.ts`, `src/bench/metrics.ts`, `tests/mutated-flows.test.ts`.
+
+## Phase 2: recorder
+
+### What this phase built
+- An in-page describer: role, accessible name, label, placeholder, text, nearby text, allowlisted attributes and CSS candidates for any element.
+- A recorder using `exposeBinding`: clicks, debounced fills, selects, checkboxes, Enter and submit become steps; typed values equal to a param become `{{name}}`.
+- Passwords and payment fields are refused before the value leaves the page.
+- 20 deterministic golden recordings, a record/replay LLM client with a budget guard, and `bma record`.
+
+### Key decisions (and "why not X?")
+- Plain JS injected into the page (D9). Why not TypeScript? Bundler helpers break inside the page.
+- Accessible names verified against Playwright (D10). Why not trust my own computation? The role-only baseline would be unfair.
+- LLM calls through fixtures, replay by default (D8). Why not call the API in tests? Flaky, costly, and CI must need no key.
+
+### Hardest problem
+Recording faithfully: Enter in a field makes the browser click the default button (a phantom click), `document.open` (used by `setContent`) silently removes listeners, and Playwright's `selectOption` fires synthetic events, so filtering on `isTrusted` was wrong. Each was found by a failing test.
+
+### Likely questions
+1. *How does recording know a value is a parameter?* Exact, case-insensitive match against default param values at record time.
+2. *How do you keep secrets out of the store?* The page script sends only a refusal for sensitive fields; the Node side checks again; a test types a password and greps the output.
+3. *Why record the accessible name?* It is the most stable cross-redesign signal and what Playwright role locators use.
+4. *What if the LLM fixture is missing in CI?* The test fails with the fixture key; nothing calls the network.
+5. *Why a ground-truth sidecar?* The scorer needs the right answer without the resolver ever seeing it.
+
+### Files to open
+`src/page/bma-page.js`, `src/recorder/recorder.ts`, `src/llm/client.ts`, `tests/recorder.test.ts`.

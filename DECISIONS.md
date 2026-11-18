@@ -23,3 +23,12 @@ Context: small samples (20 flows) and clustered replays. Choice: empty denominat
 
 ## D8: LLM access is record/replay, and no live calls were made during the build
 Context: the owner has not approved spending on an API key for this project. Choice: everything that can run without live calls is built and tested against a fake transport; `LLM_MODE=replay` (default in tests, CI and check.sh) serves `fixtures/llm/<sha256>.json` and a missing fixture throws. The three live-recording steps (step intent labels, the `llm` tie-break, the from-scratch agent baseline) are implemented but their fixtures are not recorded yet; they are listed under "Needs me" in PROGRESS.md. Why: the benchmark's main table (css-only, role-only, semantic-hash, semantic-minilm) needs no LLM at all, and recorded intents are optional because `fallbackIntent()` builds deterministic labels. Price table: `claude-haiku-5-5` at $1 / $5 per million tokens is an assumption (see `src/llm/pricing.ts`) to confirm before the first live call; the budget guard prices unknown models at the highest known rate.
+
+## D9: The in-page script is plain JavaScript
+Context: the describer and the recording listeners are serialized into the page. Options: TypeScript functions passed to `page.evaluate`, or plain `.js` files read as text. Choice: plain JS (`src/page/bma-page.js`, `bma-record.js`). Why: tsx/esbuild can inject helpers (such as `__name`) that do not exist in the page. Trade-off: no type checking in those files; the extractor tests and the Playwright agreement sweep cover them instead.
+
+## D10: Accessible names are computed in-page and checked against Playwright
+Context: the `role-only` baseline is only fair if recorded names match what `getByRole` sees. Choice: a pragmatic accname subset plus a sweep test that every visible control on 13 demo pages (none and heavy) is found by `getByRole(role, {name, exact})`. `<summary>` has no Playwright role, so it is excluded from the sweep and handled specially in the role strategy.
+
+## D11: A `select` is described by its option labels
+Context: the selected option changes after the user chooses, so recording it would make the description differ from the replay-time one. Choice: `text` holds all option labels.
