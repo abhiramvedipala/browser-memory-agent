@@ -9,3 +9,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #3 Seeded DOM mutation engine: Seeded mutation engine with 11 operators across light/medium/heavy levels and a single-operator mode; ground-truth ids preserved.
 
+- PR #4 Safety allowlist, route guard and password refusal: URL allowlist, Playwright context route guard that aborts and counts non-local requests, and a recorder-side refusal of password/payment/CAPTCHA fields.
+
