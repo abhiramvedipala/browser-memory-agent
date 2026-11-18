@@ -1,0 +1,137 @@
+[
+  {
+    "id": "docs-proxy-sidebar",
+    "app": "docs",
+    "task": "Use the sidebar to open the proxy configuration page",
+    "params": {},
+    "startUrl": "/docs/",
+    "steps": [
+      {
+        "op": "click",
+        "id": "dc.sec.guide"
+      },
+      {
+        "op": "click",
+        "id": "dc.sub.configuration"
+      },
+      {
+        "op": "click",
+        "id": "dc.leaf.proxy"
+      }
+    ],
+    "success": [
+      {
+        "event": "doc_view",
+        "where": {
+          "slug": "proxy"
+        }
+      }
+    ]
+  },
+  {
+    "id": "docs-proxy-search",
+    "app": "docs",
+    "task": "Search the docs for {{q}} and open the proxy page",
+    "params": {
+      "q": "proxy"
+    },
+    "startUrl": "/docs/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "dc.q",
+        "value": "{{q}}"
+      },
+      {
+        "op": "click",
+        "id": "dc.search"
+      },
+      {
+        "op": "click",
+        "id": "dc.res.proxy"
+      }
+    ],
+    "success": [
+      {
+        "event": "doc_search",
+        "where": {
+          "q": "proxy"
+        }
+      },
+      {
+        "event": "doc_view",
+        "where": {
+          "slug": "proxy"
+        }
+      }
+    ]
+  },
+  {
+    "id": "docs-install-examples",
+    "app": "docs",
+    "task": "Open Install the CLI from the sidebar and switch to the Examples tab",
+    "params": {},
+    "startUrl": "/docs/",
+    "steps": [
+      {
+        "op": "click",
+        "id": "dc.sec.guide"
+      },
+      {
+        "op": "click",
+        "id": "dc.sub.getting-started"
+      },
+      {
+        "op": "click",
+        "id": "dc.leaf.install"
+      },
+      {
+        "op": "click",
+        "id": "dc.tab.examples"
+      }
+    ],
+    "success": [
+      {
+        "event": "doc_view",
+        "where": {
+          "slug": "install",
+          "tab": "examples"
+        }
+      }
+    ]
+  },
+  {
+    "id": "docs-client-notes",
+    "app": "docs",
+    "task": "Open the Client API page from the sidebar and switch to the Notes tab",
+    "params": {},
+    "startUrl": "/docs/",
+    "steps": [
+      {
+        "op": "click",
+        "id": "dc.sec.reference"
+      },
+      {
+        "op": "click",
+        "id": "dc.sub.api"
+      },
+      {
+        "op": "click",
+        "id": "dc.leaf.client"
+      },
+      {
+        "op": "click",
+        "id": "dc.tab.notes"
+      }
+    ],
+    "success": [
+      {
+        "event": "doc_view",
+        "where": {
+          "slug": "client",
+          "tab": "notes"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,221 @@
+[
+  {
+    "id": "helpdesk-billing",
+    "app": "helpdesk",
+    "task": "Open a {{category}} ticket with {{priority}} priority about {{subject}}",
+    "params": {
+      "name": "Alex Demo",
+      "email": "alex@example.test",
+      "category": "billing",
+      "priority": "normal",
+      "subject": "Invoice charged twice",
+      "description": "I see two charges on my last invoice."
+    },
+    "startUrl": "/helpdesk/",
+    "steps": [
+      {
+        "op": "click",
+        "id": "hd.open"
+      },
+      {
+        "op": "fill",
+        "id": "hd.name",
+        "value": "{{name}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.email",
+        "value": "{{email}}"
+      },
+      {
+        "op": "click",
+        "id": "hd.next1"
+      },
+      {
+        "op": "select",
+        "id": "hd.category",
+        "value": "{{category}}"
+      },
+      {
+        "op": "select",
+        "id": "hd.priority",
+        "value": "{{priority}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.subject",
+        "value": "{{subject}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.description",
+        "value": "{{description}}"
+      },
+      {
+        "op": "click",
+        "id": "hd.next2"
+      },
+      {
+        "op": "click",
+        "id": "hd.submit"
+      }
+    ],
+    "success": [
+      {
+        "event": "ticket",
+        "where": {
+          "category": "billing",
+          "priority": "normal",
+          "subject": "Invoice charged twice"
+        }
+      }
+    ],
+    "submissions": 1
+  },
+  {
+    "id": "helpdesk-technical",
+    "app": "helpdesk",
+    "task": "Open a {{category}} ticket with {{priority}} priority about {{subject}}",
+    "params": {
+      "name": "Sam Example",
+      "email": "alex@example.test",
+      "category": "technical",
+      "priority": "high",
+      "subject": "Export job fails",
+      "description": "The nightly export fails with a timeout."
+    },
+    "startUrl": "/helpdesk/",
+    "steps": [
+      {
+        "op": "click",
+        "id": "hd.open"
+      },
+      {
+        "op": "fill",
+        "id": "hd.name",
+        "value": "{{name}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.email",
+        "value": "{{email}}"
+      },
+      {
+        "op": "click",
+        "id": "hd.next1"
+      },
+      {
+        "op": "select",
+        "id": "hd.category",
+        "value": "{{category}}"
+      },
+      {
+        "op": "select",
+        "id": "hd.priority",
+        "value": "{{priority}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.subject",
+        "value": "{{subject}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.description",
+        "value": "{{description}}"
+      },
+      {
+        "op": "click",
+        "id": "hd.next2"
+      },
+      {
+        "op": "click",
+        "id": "hd.submit"
+      }
+    ],
+    "success": [
+      {
+        "event": "ticket",
+        "where": {
+          "category": "technical",
+          "priority": "high",
+          "subject": "Export job fails"
+        }
+      }
+    ],
+    "submissions": 1
+  },
+  {
+    "id": "helpdesk-account",
+    "app": "helpdesk",
+    "task": "Open a {{category}} ticket with {{priority}} priority about {{subject}}",
+    "params": {
+      "name": "Riley Sample",
+      "email": "alex@example.test",
+      "category": "account",
+      "priority": "low",
+      "subject": "Change my display name",
+      "description": "Please update the name shown on my profile."
+    },
+    "startUrl": "/helpdesk/",
+    "steps": [
+      {
+        "op": "click",
+        "id": "hd.open"
+      },
+      {
+        "op": "fill",
+        "id": "hd.name",
+        "value": "{{name}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.email",
+        "value": "{{email}}"
+      },
+      {
+        "op": "click",
+        "id": "hd.next1"
+      },
+      {
+        "op": "select",
+        "id": "hd.category",
+        "value": "{{category}}"
+      },
+      {
+        "op": "select",
+        "id": "hd.priority",
+        "value": "{{priority}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.subject",
+        "value": "{{subject}}"
+      },
+      {
+        "op": "fill",
+        "id": "hd.description",
+        "value": "{{description}}"
+      },
+      {
+        "op": "click",
+        "id": "hd.next2"
+      },
+      {
+        "op": "click",
+        "id": "hd.submit"
+      }
+    ],
+    "success": [
+      {
+        "event": "ticket",
+        "where": {
+          "category": "account",
+          "priority": "low",
+          "subject": "Change my display name"
+        }
+      }
+    ],
+    "submissions": 1
+  }
+]
