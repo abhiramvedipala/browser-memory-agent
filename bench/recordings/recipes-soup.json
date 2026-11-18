@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "flowId": "recipes-soup",
+  "app": "recipes",
+  "name": "recipes-soup",
+  "task": "Search {{q}} recipes and open Tomato Basil Soup",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/recipes",
+  "params": {
+    "q": "soup"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/recipes",
+      "valueTemplate": "http://127.0.0.1:4173/recipes/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/recipes",
+      "valueTemplate": "{{q}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Search recipes",
+        "label": "Search recipes",
+        "placeholder": "soup, pasta, salad",
+        "text": "",
+        "nearbyText": "Recipe Box | Search recipes",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "q",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-q",
+          "[data-testid=\"q-input\"]",
+          "form > div:nth-of-type(1) > div > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 146,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/recipes/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/recipes",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search",
+        "label": "",
+        "placeholder": "",
+        "text": "Search",
+        "nearbyText": "Recipe Box",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 190,
+          "width": 68,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/recipes/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/recipes/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Tomato Basil Soup",
+        "label": "",
+        "placeholder": "",
+        "text": "Tomato Basil Soup",
+        "nearbyText": "Recipes",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/recipes/recipe/1"
+        },
+        "cssCandidates": [
+          "ul > li:nth-of-type(1) > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 512,
+          "width": 155,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/recipes/search?q=soup"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "rc.q",
+    "rc.search",
+    "rc.res.1"
+  ]
+}

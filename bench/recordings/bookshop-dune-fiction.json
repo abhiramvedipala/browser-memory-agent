@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "flowId": "bookshop-dune-fiction",
+  "app": "bookshop",
+  "name": "bookshop-dune-fiction",
+  "task": "Search {{category}} for {{query}} and add the paperback to the cart",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/bookshop",
+  "params": {
+    "category": "fiction",
+    "query": "dune"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": "http://127.0.0.1:4173/bookshop/",
+      "target": null
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": "{{category}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Category",
+        "label": "Category",
+        "placeholder": "",
+        "text": "All categories Programming Fiction Science History",
+        "nearbyText": "Welcome to the Bookshop | Category",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "category"
+        },
+        "cssCandidates": [
+          "#f-category",
+          "[data-testid=\"category-select\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(2) > select"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 248,
+          "width": 128,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": "{{query}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Search books",
+        "label": "Search books",
+        "placeholder": "Title or author",
+        "text": "",
+        "nearbyText": "Welcome to the Bookshop | Search books",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "q",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-q",
+          "[data-testid=\"q-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(1) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 183,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search",
+        "label": "",
+        "placeholder": "",
+        "text": "Search",
+        "nearbyText": "Welcome to the Bookshop",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 288,
+          "width": 68,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Dune",
+        "label": "",
+        "placeholder": "",
+        "text": "Dune",
+        "nearbyText": "Search results",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/bookshop/book/8"
+        },
+        "cssCandidates": [
+          "li:nth-of-type(1) > article > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 495,
+          "width": 44,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/search?q=dune&category=fiction"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/bookshop/book/:id",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Add to cart",
+        "label": "",
+        "placeholder": "",
+        "text": "Add to cart",
+        "nearbyText": "Dune",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"add-to-cart-btn\"]",
+          "div > form > div:nth-of-type(1) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 198,
+          "width": 96,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/bookshop/book/8"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "bk.cat",
+    "bk.q",
+    "bk.search",
+    "bk.res.8",
+    "bk.add"
+  ]
+}

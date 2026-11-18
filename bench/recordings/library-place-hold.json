@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "flowId": "library-place-hold",
+  "app": "library",
+  "name": "library-place-hold",
+  "task": "Place a hold on a {{keywords}} book for {{name}} at the {{branch}} branch",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/library",
+  "params": {
+    "keywords": "poetry",
+    "name": "Alex Demo",
+    "email": "alex@example.test",
+    "branch": "east"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "http://127.0.0.1:4173/library/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": "{{keywords}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Keywords",
+        "label": "Keywords",
+        "placeholder": "Title, topic or subject",
+        "text": "",
+        "nearbyText": "City Library | Keywords",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "keywords",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-keywords",
+          "[data-testid=\"keywords-input\"]",
+          "form > div:nth-of-type(1) > div > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 183,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Search catalog",
+        "label": "",
+        "placeholder": "",
+        "text": "Search catalog",
+        "nearbyText": "City Library",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"search-catalog-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 251,
+          "width": 122,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/catalog",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Poemas selectos",
+        "label": "",
+        "placeholder": "",
+        "text": "Poemas selectos",
+        "nearbyText": "Ariel",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/library/item/10"
+        },
+        "cssCandidates": [
+          "ul > li:nth-of-type(3) > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 582,
+          "width": 142,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/catalog?keywords=poetry&author=&yearFrom=&language="
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/item/:id",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Place a hold",
+        "label": "",
+        "placeholder": "",
+        "text": "Place a hold",
+        "nearbyText": "Poemas selectos",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/library/hold/10"
+        },
+        "cssCandidates": [
+          "main > div > p:nth-of-type(2) > a"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 162,
+          "width": 83,
+          "height": 18
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/item/10"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/hold/:id",
+      "valueTemplate": "{{name}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Full name",
+        "label": "Full name",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "Place a hold: Poemas selectos | Full name",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "fullName",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-fullName",
+          "[data-testid=\"fullName-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(1) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 146,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/hold/10"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/hold/:id",
+      "valueTemplate": "{{email}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Email address",
+        "label": "Email address",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "Place a hold: Poemas selectos | Email address",
+        "tag": "input",
+        "inputType": "email",
+        "attrs": {
+          "name": "email",
+          "type": "email"
+        },
+        "cssCandidates": [
+          "#f-email",
+          "[data-testid=\"email-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(2) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 211,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/hold/10"
+      }
+    },
+    {
+      "action": "select",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/hold/:id",
+      "valueTemplate": "{{branch}}",
+      "target": {
+        "role": "combobox",
+        "accessibleName": "Pickup branch",
+        "label": "Pickup branch",
+        "placeholder": "",
+        "text": "Main East West",
+        "nearbyText": "Place a hold: Poemas selectos | Pickup branch",
+        "tag": "select",
+        "inputType": "",
+        "attrs": {
+          "name": "branch"
+        },
+        "cssCandidates": [
+          "#f-branch",
+          "[data-testid=\"branch-select\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(3) > select"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 277,
+          "width": 69,
+          "height": 32
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/hold/10"
+      }
+    },
+    {
+      "action": "check",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/hold/:id",
+      "valueTemplate": "true",
+      "target": {
+        "role": "checkbox",
+        "accessibleName": "Email me when it is ready",
+        "label": "Email me when it is ready",
+        "placeholder": "",
+        "text": "",
+        "nearbyText": "Place a hold: Poemas selectos | Email me when it is ready",
+        "tag": "input",
+        "inputType": "checkbox",
+        "attrs": {
+          "name": "notify",
+          "type": "checkbox",
+          "value": "yes"
+        },
+        "cssCandidates": [
+          "#f-notify-yes",
+          "[data-testid=\"notify-yes\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(4) > input"
+        ],
+        "bbox": {
+          "x": 164,
+          "y": 319,
+          "width": 13,
+          "height": 13
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/hold/10"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/library/hold/:id",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Place hold",
+        "label": "",
+        "placeholder": "",
+        "text": "Place hold",
+        "nearbyText": "Place a hold: Poemas selectos",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"place-hold-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 346,
+          "width": 91,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/library/hold/10"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "lb.kw",
+    "lb.search",
+    "lb.res.10",
+    "lb.hold.link",
+    "lb.h.name",
+    "lb.h.email",
+    "lb.h.branch",
+    "lb.h.notify",
+    "lb.h.submit"
+  ]
+}

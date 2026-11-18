@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "flowId": "jobs-remote-page2",
+  "app": "jobs",
+  "name": "jobs-remote-page2",
+  "task": "Search {{loc}} {{kw}} jobs, go to the next page and open Platform Developer",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/jobs",
+  "params": {
+    "kw": "developer",
+    "loc": "Remote"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": "http://127.0.0.1:4173/jobs/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": "{{kw}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Job title or keyword",
+        "label": "Job title or keyword",
+        "placeholder": "e.g. engineer",
+        "text": "",
+        "nearbyText": "Jobs Board | Job title or keyword",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "kw",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-kw",
+          "[data-testid=\"kw-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(1) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 183,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": "{{loc}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Location",
+        "label": "Location",
+        "placeholder": "City or Remote",
+        "text": "",
+        "nearbyText": "Jobs Board | Location",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "loc",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-loc",
+          "[data-testid=\"loc-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(2) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 248,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Find jobs",
+        "label": "",
+        "placeholder": "",
+        "text": "Find jobs",
+        "nearbyText": "Jobs Board",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"find-jobs-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 292,
+          "width": 82,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Next",
+        "label": "",
+        "placeholder": "",
+        "text": "Next",
+        "nearbyText": "QA Developer",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/jobs/search?kw=developer&loc=Remote&page=2"
+        },
+        "cssCandidates": [
+          "main > div > nav > a"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 642,
+          "width": 32,
+          "height": 18
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/search?kw=developer&loc=Remote"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Platform Developer",
+        "label": "",
+        "placeholder": "",
+        "text": "Platform Developer",
+        "nearbyText": "Search results",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/jobs/posting/9"
+        },
+        "cssCandidates": [
+          "ul > li:nth-of-type(1) > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 372,
+          "width": 162,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/search?kw=developer&loc=Remote&page=2"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "jb.kw",
+    "jb.loc",
+    "jb.find",
+    "jb.next",
+    "jb.res.9"
+  ]
+}

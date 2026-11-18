@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "flowId": "jobs-engineer-boston",
+  "app": "jobs",
+  "name": "jobs-engineer-boston",
+  "task": "Search {{kw}} jobs in {{loc}} and open the first posting",
+  "intent": "",
+  "startUrlPattern": "http://127.0.0.1:*/jobs",
+  "params": {
+    "kw": "engineer",
+    "loc": "Boston"
+  },
+  "steps": [
+    {
+      "action": "navigate",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": "http://127.0.0.1:4173/jobs/",
+      "target": null
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": "{{kw}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Job title or keyword",
+        "label": "Job title or keyword",
+        "placeholder": "e.g. engineer",
+        "text": "",
+        "nearbyText": "Jobs Board | Job title or keyword",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "kw",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-kw",
+          "[data-testid=\"kw-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(1) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 183,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/"
+      }
+    },
+    {
+      "action": "fill",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": "{{loc}}",
+      "target": {
+        "role": "textbox",
+        "accessibleName": "Location",
+        "label": "Location",
+        "placeholder": "City or Remote",
+        "text": "",
+        "nearbyText": "Jobs Board | Location",
+        "tag": "input",
+        "inputType": "text",
+        "attrs": {
+          "name": "loc",
+          "type": "text"
+        },
+        "cssCandidates": [
+          "#f-loc",
+          "[data-testid=\"loc-input\"]",
+          "form > div:nth-of-type(1) > div:nth-of-type(2) > input"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 248,
+          "width": 187,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs",
+      "valueTemplate": null,
+      "target": {
+        "role": "button",
+        "accessibleName": "Find jobs",
+        "label": "",
+        "placeholder": "",
+        "text": "Find jobs",
+        "nearbyText": "Jobs Board",
+        "tag": "button",
+        "inputType": "",
+        "attrs": {
+          "type": "submit"
+        },
+        "cssCandidates": [
+          "[data-testid=\"find-jobs-btn\"]",
+          "div > form > div:nth-of-type(2) > button"
+        ],
+        "bbox": {
+          "x": 160,
+          "y": 292,
+          "width": 82,
+          "height": 35
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/"
+      }
+    },
+    {
+      "action": "click",
+      "intent": "",
+      "urlPattern": "http://127.0.0.1:*/jobs/search",
+      "valueTemplate": null,
+      "target": {
+        "role": "link",
+        "accessibleName": "Software Engineer",
+        "label": "",
+        "placeholder": "",
+        "text": "Software Engineer",
+        "nearbyText": "Search results",
+        "tag": "a",
+        "inputType": "",
+        "attrs": {
+          "href": "/jobs/posting/1"
+        },
+        "cssCandidates": [
+          "ul > li:nth-of-type(1) > h3 > a"
+        ],
+        "bbox": {
+          "x": 171,
+          "y": 372,
+          "width": 155,
+          "height": 21
+        },
+        "frameUrl": "http://127.0.0.1:4173/jobs/search?kw=engineer&loc=Boston"
+      }
+    }
+  ],
+  "groundTruth": [
+    null,
+    "jb.kw",
+    "jb.loc",
+    "jb.find",
+    "jb.res.1"
+  ]
+}
