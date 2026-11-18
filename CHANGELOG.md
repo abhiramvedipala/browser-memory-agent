@@ -17,3 +17,7 @@ One entry per merged PR, grouped by phase.
 
 - PR #7 Phase 1 decisions, study guide and interview notes: Decisions D3-D7, study guide and interview notes for Phase 1.
 
+
+## Phase 2
+- PR #8 In-page target extractor: In-page script that describes an element (role, accessible name, label, placeholder, text, nearby text, attrs, CSS candidates, bbox) and a sweep test proving names agree with Playwright's getByRole on every demo control at none and heavy.
+
