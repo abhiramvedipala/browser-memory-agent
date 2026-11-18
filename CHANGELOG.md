@@ -25,3 +25,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #10 Deterministic golden recordings of all 20 flows: npm run record:golden records all 20 flows via the real recorder in a guarded context and writes JSON (with a scorer-only ground-truth sidecar); a test re-records and diffs.
 
+- PR #11 LLM client with fixtures and budget guard, and step intent labels: Record/replay LLM client (replay default, missing fixture is an error), budget guard at 1.80 USD with running total, price table, ledger rows, and one-call step intent labelling with a deterministic fallback. Live fixtures are pending (no API key approved).
+
