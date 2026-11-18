@@ -13,10 +13,10 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Unit tests cover routing, cookies and state
 
 ## #2 Six demo apps and 20 benchmark flows
-- Label: feature | Milestone: Phase 1 | Branch: `phase-1/demo-apps` | Status: open
+- Label: feature | Milestone: Phase 1 | Branch: `phase-1/demo-apps` | Status: fixed in PR #2
 - What and why: Six demo apps and 20 benchmark flows.
 - Acceptance checks:
-  - [ ] 6 apps served under their own base paths
-  - [ ] 20 flows defined in bench/flows/*.json with task, params, start URL, golden steps and success check
-  - [ ] Every interactive element carries data-bench-id
-  - [ ] Golden script passes each flow success check on mut=none
+  - [x] 6 apps served under their own base paths
+  - [x] 20 flows defined in bench/flows/*.json with task, params, start URL, golden steps and success check
+  - [x] Every interactive element carries data-bench-id
+  - [x] Golden script passes each flow success check on mut=none
