@@ -59,9 +59,9 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Unit tests on hand-computed cases: empty, all failures, ties
 
 ## #7 Phase 1 decisions, study guide and interview notes
-- Label: docs | Milestone: Phase 1 | Branch: `phase-1/docs-and-notes` | Status: open
+- Label: docs | Milestone: Phase 1 | Branch: `phase-1/docs-and-notes` | Status: fixed in PR #7
 - What and why: Phase 1 decisions, study guide and interview notes.
 - Acceptance checks:
-  - [ ] DECISIONS.md covers demo-app, session, mutation and metric choices
-  - [ ] STUDY-GUIDE lists Phase 1 PRs in reading order
-  - [ ] INTERVIEW-NOTES has the Phase 1 section
+  - [x] DECISIONS.md covers demo-app, session, mutation and metric choices
+  - [x] STUDY-GUIDE lists Phase 1 PRs in reading order
+  - [x] INTERVIEW-NOTES has the Phase 1 section
