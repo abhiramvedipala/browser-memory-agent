@@ -1,0 +1,128 @@
+[
+  {
+    "id": "recipes-soup",
+    "app": "recipes",
+    "task": "Search {{q}} recipes and open Tomato Basil Soup",
+    "params": {
+      "q": "soup"
+    },
+    "startUrl": "/recipes/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "rc.q",
+        "value": "{{q}}"
+      },
+      {
+        "op": "click",
+        "id": "rc.search"
+      },
+      {
+        "op": "click",
+        "id": "rc.res.1"
+      }
+    ],
+    "success": [
+      {
+        "event": "recipe_view",
+        "where": {
+          "recipeId": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "recipes-vegan-pasta",
+    "app": "recipes",
+    "task": "Find {{q}} recipes, keep only vegan ones and open Vegan Pesto Pasta",
+    "params": {
+      "q": "pasta"
+    },
+    "startUrl": "/recipes/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "rc.q",
+        "value": "{{q}}"
+      },
+      {
+        "op": "click",
+        "id": "rc.search"
+      },
+      {
+        "op": "check",
+        "id": "rc.diet.vegan"
+      },
+      {
+        "op": "click",
+        "id": "rc.apply"
+      },
+      {
+        "op": "click",
+        "id": "rc.res.6"
+      }
+    ],
+    "success": [
+      {
+        "event": "recipe_search",
+        "where": {
+          "diets": "vegan"
+        }
+      },
+      {
+        "event": "recipe_view",
+        "where": {
+          "recipeId": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "recipes-quick-salad",
+    "app": "recipes",
+    "task": "Find {{q}} recipes sorted by cooking time and open the quickest",
+    "params": {
+      "q": "salad",
+      "sort": "time"
+    },
+    "startUrl": "/recipes/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "rc.q",
+        "value": "{{q}}"
+      },
+      {
+        "op": "click",
+        "id": "rc.search"
+      },
+      {
+        "op": "select",
+        "id": "rc.sort",
+        "value": "{{sort}}"
+      },
+      {
+        "op": "click",
+        "id": "rc.apply"
+      },
+      {
+        "op": "click",
+        "id": "rc.res.9"
+      }
+    ],
+    "success": [
+      {
+        "event": "recipe_search",
+        "where": {
+          "sort": "time"
+        }
+      },
+      {
+        "event": "recipe_view",
+        "where": {
+          "recipeId": 9
+        }
+      }
+    ]
+  }
+]

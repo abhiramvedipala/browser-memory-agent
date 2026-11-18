@@ -1,0 +1,124 @@
+[
+  {
+    "id": "jobs-engineer-boston",
+    "app": "jobs",
+    "task": "Search {{kw}} jobs in {{loc}} and open the first posting",
+    "params": {
+      "kw": "engineer",
+      "loc": "Boston"
+    },
+    "startUrl": "/jobs/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "jb.kw",
+        "value": "{{kw}}"
+      },
+      {
+        "op": "fill",
+        "id": "jb.loc",
+        "value": "{{loc}}"
+      },
+      {
+        "op": "click",
+        "id": "jb.find"
+      },
+      {
+        "op": "click",
+        "id": "jb.res.1"
+      }
+    ],
+    "success": [
+      {
+        "event": "job_view",
+        "where": {
+          "jobId": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "jobs-remote-page2",
+    "app": "jobs",
+    "task": "Search {{loc}} {{kw}} jobs, go to the next page and open Platform Developer",
+    "params": {
+      "kw": "developer",
+      "loc": "Remote"
+    },
+    "startUrl": "/jobs/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "jb.kw",
+        "value": "{{kw}}"
+      },
+      {
+        "op": "fill",
+        "id": "jb.loc",
+        "value": "{{loc}}"
+      },
+      {
+        "op": "click",
+        "id": "jb.find"
+      },
+      {
+        "op": "click",
+        "id": "jb.next"
+      },
+      {
+        "op": "click",
+        "id": "jb.res.9"
+      }
+    ],
+    "success": [
+      {
+        "event": "job_search",
+        "where": {
+          "page": 2
+        }
+      },
+      {
+        "event": "job_view",
+        "where": {
+          "jobId": 9
+        }
+      }
+    ]
+  },
+  {
+    "id": "jobs-save-analyst",
+    "app": "jobs",
+    "task": "Find an {{kw}} job and save the Data Analyst posting",
+    "params": {
+      "kw": "analyst"
+    },
+    "startUrl": "/jobs/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "jb.kw",
+        "value": "{{kw}}"
+      },
+      {
+        "op": "click",
+        "id": "jb.find"
+      },
+      {
+        "op": "click",
+        "id": "jb.res.11"
+      },
+      {
+        "op": "click",
+        "id": "jb.save"
+      }
+    ],
+    "success": [
+      {
+        "event": "job_saved",
+        "where": {
+          "jobId": 11
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "bookshop-rust-paperback",
+    "app": "bookshop",
+    "task": "Find a {{format}} book about {{query}} under ${{maxPrice}} and add it to the cart",
+    "params": {
+      "query": "rust",
+      "format": "paperback",
+      "maxPrice": "40"
+    },
+    "startUrl": "/bookshop/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "bk.q",
+        "value": "{{query}}"
+      },
+      {
+        "op": "click",
+        "id": "bk.search"
+      },
+      {
+        "op": "select",
+        "id": "bk.f.format",
+        "value": "{{format}}"
+      },
+      {
+        "op": "fill",
+        "id": "bk.f.max",
+        "value": "{{maxPrice}}"
+      },
+      {
+        "op": "click",
+        "id": "bk.f.apply"
+      },
+      {
+        "op": "click",
+        "id": "bk.res.4"
+      },
+      {
+        "op": "click",
+        "id": "bk.add"
+      }
+    ],
+    "success": [
+      {
+        "event": "cart_add",
+        "where": {
+          "bookId": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": "bookshop-dune-fiction",
+    "app": "bookshop",
+    "task": "Search {{category}} for {{query}} and add the paperback to the cart",
+    "params": {
+      "category": "fiction",
+      "query": "dune"
+    },
+    "startUrl": "/bookshop/",
+    "steps": [
+      {
+        "op": "select",
+        "id": "bk.cat",
+        "value": "{{category}}"
+      },
+      {
+        "op": "fill",
+        "id": "bk.q",
+        "value": "{{query}}"
+      },
+      {
+        "op": "click",
+        "id": "bk.search"
+      },
+      {
+        "op": "click",
+        "id": "bk.res.8"
+      },
+      {
+        "op": "click",
+        "id": "bk.add"
+      }
+    ],
+    "success": [
+      {
+        "event": "cart_add",
+        "where": {
+          "bookId": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": "bookshop-history-hardcover",
+    "app": "bookshop",
+    "task": "Browse {{category}} books, keep only {{format}} and open Sapiens",
+    "params": {
+      "category": "history",
+      "format": "hardcover"
+    },
+    "startUrl": "/bookshop/",
+    "steps": [
+      {
+        "op": "select",
+        "id": "bk.cat",
+        "value": "{{category}}"
+      },
+      {
+        "op": "click",
+        "id": "bk.search"
+      },
+      {
+        "op": "select",
+        "id": "bk.f.format",
+        "value": "{{format}}"
+      },
+      {
+        "op": "click",
+        "id": "bk.f.apply"
+      },
+      {
+        "op": "click",
+        "id": "bk.res.15"
+      }
+    ],
+    "success": [
+      {
+        "event": "view",
+        "where": {
+          "bookId": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": "bookshop-sql-cart",
+    "app": "bookshop",
+    "task": "Add a {{query}} book to the cart and open the cart",
+    "params": {
+      "query": "sql"
+    },
+    "startUrl": "/bookshop/",
+    "steps": [
+      {
+        "op": "fill",
+        "id": "bk.q",
+        "value": "{{query}}"
+      },
+      {
+        "op": "click",
+        "id": "bk.search"
+      },
+      {
+        "op": "click",
+        "id": "bk.res.5"
+      },
+      {
+        "op": "click",
+        "id": "bk.add"
+      },
+      {
+        "op": "click",
+        "id": "bk.nav.cart"
+      }
+    ],
+    "success": [
+      {
+        "event": "cart_add",
+        "where": {
+          "bookId": 5
+        }
+      },
+      {
+        "event": "cart_view",
+        "where": {}
+      }
+    ]
+  }
+]
