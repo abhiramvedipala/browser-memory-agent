@@ -33,3 +33,7 @@ One entry per merged PR, grouped by phase.
 
 - PR #14 Phase 2 decisions, study guide and interview notes: Phase 2 decisions D9-D11, study guide and interview notes.
 
+
+## Phase 3
+- PR #15 Embedder interface, MiniLM, hash embedder and SQLite cache: Embedder interface with MiniLM (transformers.js, verified on Node 22 arm64) and a deterministic HashEmbedder, plus a SQLite vector cache with batches of at most 64.
+

@@ -18,7 +18,8 @@
     "demo": "tsx demo-apps/main.ts",
     "bench:smoke": "echo 'bench smoke: not wired yet'",
     "record:golden": "tsx scripts/record-golden.ts",
-    "label:intents": "tsx scripts/label-intents.ts"
+    "label:intents": "tsx scripts/label-intents.ts",
+    "model:fetch": "tsx scripts/fetch-model.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "1.10.0",
