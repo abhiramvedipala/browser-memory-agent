@@ -10,6 +10,7 @@ const USAGE = `bma: browser workflow memory agent (local demo apps only)
 
   bma record --url <local url> --name <name> [--task "..."] [--param k=v]... [--db file]
   bma list [--db file]
+  bma export --name <name> [--db file]
 
 Only http://127.0.0.1:<DEMO_PORT>/... is accepted. Logins, passwords, payments and CAPTCHAs are never recorded.`;
 
@@ -58,6 +59,22 @@ export async function main(argv: string[]): Promise<number> {
     if (!rows.length) console.log('No workflows yet. Record one with: bma record --url http://127.0.0.1:4173/bookshop/ --name my-flow');
     for (const w of rows) console.log(`${w.name}  v${w.version}  ${w.stepCount} steps  ${w.task}`);
     store.close();
+    return 0;
+  }
+
+  if (cmd === 'export') {
+    if (!values.name) {
+      console.error('bma export needs --name\n\n' + USAGE);
+      return 2;
+    }
+    const store = Store.open(dbPath);
+    const wf = store.getWorkflowByName(values.name);
+    store.close();
+    if (!wf) {
+      console.error(`No workflow named "${values.name}"`);
+      return 1;
+    }
+    console.log(JSON.stringify(wf, null, 2));
     return 0;
   }
 

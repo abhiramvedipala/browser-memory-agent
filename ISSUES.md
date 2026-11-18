@@ -113,3 +113,11 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Refused fields are reported and nothing sensitive is stored
   - [x] bma list shows saved workflows
   - [x] Tested headless with a scripted driver
+
+## #13 Recording format documentation with a real exported example
+- Label: docs | Milestone: Phase 2 | Branch: `phase-2/recording-format-doc` | Status: fixed in PR #13
+- What and why: Recording format documentation with a real exported example.
+- Acceptance checks:
+  - [x] docs/recording-format.md explains every table and field
+  - [x] Example is exported from the store by a script, not hand-written
+  - [x] bma export prints a stored workflow as JSON
