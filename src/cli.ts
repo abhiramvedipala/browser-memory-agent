@@ -13,6 +13,7 @@ const USAGE = `bma: browser workflow memory agent (local demo apps only)
   bma record --url <local url> --name <name> [--task "..."] [--param k=v]... [--db file]
   bma list [--db file]
   bma export --name <name> [--db file]
+  bma mcp [--db file] [--seed-golden]   stdio MCP server for other assistants
   bma replay --name <name> [--param k=v]... [--strategy semantic-minilm] [--mutation medium] [--seed 100]
              [--approve-all-for-benchmark] [--headed] [--db file]
 
@@ -57,6 +58,7 @@ export async function main(argv: string[]): Promise<number> {
       mutation: { type: 'string' },
       seed: { type: 'string' },
       'approve-all-for-benchmark': { type: 'boolean', default: false },
+      'seed-golden': { type: 'boolean', default: false },
     },
     allowPositionals: true,
   });
@@ -85,6 +87,12 @@ export async function main(argv: string[]): Promise<number> {
     }
     console.log(JSON.stringify(wf, null, 2));
     return 0;
+  }
+
+  if (cmd === 'mcp') {
+    const { runStdioServer } = await import('./mcp/stdio.ts');
+    await runStdioServer(dbPath, { seedGolden: values['seed-golden'] });
+    return new Promise<number>(() => undefined); // runs until stdin closes
   }
 
   if (cmd === 'replay') {

@@ -41,6 +41,8 @@ export interface ReplayOptions {
   /** Called after a step resolves and before it acts; the benchmark scorer uses it (and only it) to read ground truth. */
   observe?: (o: StepObservation) => Promise<void>;
   sid?: string;
+  /** Use this id for the run row (the MCP server hands it out before the replay starts). */
+  runId?: string;
   headless?: boolean;
   log?: (line: string) => void;
 }
@@ -124,7 +126,7 @@ export async function replayWorkflow(workflow: Workflow, o: ReplayOptions): Prom
   const sid = o.sid ?? randomUUID();
   const level = o.mutationLevel ?? 'none';
   const seed = o.seed ?? 0;
-  const run = o.store.startRun({ workflowId: workflow.id, strategy: strategyName, mutationLevel: level, seed });
+  const run = o.store.startRun({ workflowId: workflow.id, strategy: strategyName, mutationLevel: level, seed, id: o.runId });
   const runDir = join(o.runsDir ?? RUNS_DIR, run.id);
   const log = o.log ?? (() => undefined);
   const started = Date.now();
