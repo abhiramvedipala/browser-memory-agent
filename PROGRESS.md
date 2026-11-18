@@ -1,10 +1,23 @@
 # Progress
 
-Status board. Updated after every merged PR.
+Status board. Updated after every merged PR (local PR numbers until the GitHub repo exists).
 
 ## Phase 1: Demo apps, store and harness
-- [ ] scaffold (on `main`)
+- [x] scaffold (on `main`)
+<!-- phase-1 -->
+
+## Phase 2: Recorder
+<!-- phase-2 -->
+
+## Phase 3: Replayer, resolver and approval gate
+<!-- phase-3 -->
+
+## Phase 4: MCP server
+<!-- phase-4 -->
+
+## Phase 5: Benchmark, results and docs
+<!-- phase-5 -->
 
 ## Needs me
-- Create the GitHub repo `abhiramvedipala/browser-memory-agent`, then push `main` first, then tags and branches (at most three at a time).
+- Create the GitHub repo `abhiramvedipala/browser-memory-agent` (private), then push `main` first, wait for CI, then tags and branches at most three at a time. Issues and PRs live in `ISSUES.md` and `docs/pr/` until then.
 - `ANTHROPIC_API_KEY`, only to record LLM fixtures (hard cap $2).
