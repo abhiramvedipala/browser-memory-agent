@@ -21,15 +21,24 @@ export function candidateLocator(page: Page, c: Pick<Candidate, 'idx'>): Locator
   return page.locator(`[data-bma-cand="${c.idx}"]`);
 }
 
+/** What the element is: role, name, label, placeholder, own text. The strongest signal. */
+export function identityText(t: Target): string {
+  const parts = [`${t.role || t.tag}: ${t.accessibleName}`];
+  if (t.label && t.label !== t.accessibleName) parts.push(`label: ${t.label}`);
+  if (t.placeholder && t.placeholder !== t.accessibleName) parts.push(`placeholder: ${t.placeholder}`);
+  if (t.text && t.text !== t.accessibleName) parts.push(`text: ${t.text}`);
+  return parts.join('. ');
+}
+
+/** Where the element sits: headings, legends, form name. Shared by neighbours, so it is weighted lower. */
+export function contextText(t: Target): string {
+  return t.nearbyText ? `context: ${t.nearbyText}` : '';
+}
+
 /**
  * The text that gets embedded, the same for a recorded target and a live candidate so the two are
  * comparable. Order puts the strongest signals first.
  */
 export function candidateText(t: Target): string {
-  const parts = [`${t.role || t.tag}: ${t.accessibleName}`];
-  if (t.label && t.label !== t.accessibleName) parts.push(`label: ${t.label}`);
-  if (t.placeholder && t.placeholder !== t.accessibleName) parts.push(`placeholder: ${t.placeholder}`);
-  if (t.text && t.text !== t.accessibleName) parts.push(`text: ${t.text}`);
-  if (t.nearbyText) parts.push(`context: ${t.nearbyText}`);
-  return parts.join('. ');
+  return [identityText(t), contextText(t)].filter(Boolean).join('. ');
 }
