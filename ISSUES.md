@@ -93,3 +93,13 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Recordings exported as JSON under bench/recordings with a ground-truth sidecar
   - [x] Importer loads a recording into SQLite
   - [x] A test re-records and diffs against the committed files
+
+## #11 LLM client with fixtures and budget guard, and step intent labels
+- Label: feature | Milestone: Phase 2 | Branch: `phase-2/intent-labels` | Status: fixed in PR #11
+- What and why: LLM client with fixtures and budget guard, and step intent labels.
+- Acceptance checks:
+  - [x] LLM client with replay (default) and record modes; missing fixture in replay is an error, never a network call
+  - [x] Budget guard refuses calls that would pass 1.80 USD and prints the running total
+  - [x] Every recorded call is written to the llm_calls ledger
+  - [x] One call per workflow writes a short intent per step, with a deterministic fallback
+  - [x] Works fully in replay mode
