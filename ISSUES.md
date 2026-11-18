@@ -76,11 +76,11 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Unit tests on fixture HTML pages
 
 ## #9 Event recorder with debounced fills and parameter detection
-- Label: feature | Milestone: Phase 2 | Branch: `phase-2/event-recorder` | Status: open
+- Label: feature | Milestone: Phase 2 | Branch: `phase-2/event-recorder` | Status: fixed in PR #9
 - What and why: Event recorder with debounced fills and parameter detection.
 - Acceptance checks:
-  - [ ] exposeBinding listener records click, fill, select, check, Enter and submit
-  - [ ] Fills are debounced and merged; sensitive fields are refused before the value leaves the page
-  - [ ] Typed values matching a flow param become {{name}}
-  - [ ] Initial navigation recorded, navigations caused by interactions are not
-  - [ ] Tests record real golden flows
+  - [x] exposeBinding listener records click, fill, select, check, Enter and submit
+  - [x] Fills are debounced and merged; sensitive fields are refused before the value leaves the page
+  - [x] Typed values matching a flow param become {{name}}
+  - [x] Initial navigation recorded, navigations caused by interactions are not
+  - [x] Tests record real golden flows

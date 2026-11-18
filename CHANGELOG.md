@@ -21,3 +21,5 @@ One entry per merged PR, grouped by phase.
 ## Phase 2
 - PR #8 In-page target extractor: In-page script that describes an element (role, accessible name, label, placeholder, text, nearby text, attrs, CSS candidates, bbox) and a sweep test proving names agree with Playwright's getByRole on every demo control at none and heavy.
 
+- PR #9 Event recorder with debounced fills and parameter detection: Recorder that attaches to a browser context and turns click, fill (debounced), select, check, Enter and submit into workflow steps with {{param}} detection; refuses password/payment fields before the value leaves the page.
+
