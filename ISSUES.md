@@ -195,3 +195,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Grid search picks min score and margin per embedder, wrong accepts penalised 10x
   - [x] Thresholds frozen in config/resolver.json with tuned=true
   - [x] npm run tune reproduces it, DECISIONS records the numbers
+
+## #22 Optional LLM tie-break over the top 3 candidates
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/llm-tiebreak` | Status: open
+- What and why: Optional LLM tie-break over the top 3 candidates.
+- Acceptance checks:
+  - [ ] llm strategy sends the step intent and the top 3 semantic candidates and accepts an index or none
+  - [ ] Off by default; only the semantic-minilm+llm strategy uses it
+  - [ ] Uses the record/replay client, budget guard and ledger
+  - [ ] Unit tests with a fake transport
