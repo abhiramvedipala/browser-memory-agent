@@ -3,12 +3,12 @@
   "minMargin": 0.04,
   "perEmbedder": {
     "minilm-l6-v2-q8": {
-      "minScore": 0.44,
-      "minMargin": 0.06
+      "minScore": 0.6,
+      "minMargin": 0.015
     },
     "hash-ngram-v1": {
-      "minScore": 0.37,
-      "minMargin": 0.105
+      "minScore": 0.53,
+      "minMargin": 0.03
     }
   },
   "contextWeight": 0.25,
