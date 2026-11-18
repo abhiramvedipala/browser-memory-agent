@@ -157,3 +157,12 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] semantic strategy combines cosine with role, name, label and placeholder terms and needs a score and a margin
   - [x] Low-confidence steps are refused, never clicked
   - [x] Unit tests for each strategy, ties, decoys and low-margin refusal
+
+## #18 Retries with backoff and failure screenshots
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/retry-and-screenshots` | Status: fixed in PR #18
+- What and why: Retries with backoff and failure screenshots.
+- Acceptance checks:
+  - [x] Up to 3 attempts over at most 3 s so late elements are found
+  - [x] Final failure writes a full-page screenshot and the scored candidate list under runs/<run_id>/
+  - [x] Retry count is returned for the run log
+  - [x] Tested with delayed and absent elements
