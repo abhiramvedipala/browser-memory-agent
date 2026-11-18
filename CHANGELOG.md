@@ -43,3 +43,5 @@ One entry per merged PR, grouped by phase.
 
 - PR #18 Retries with backoff and failure screenshots: resolveWithRetry: up to 3 attempts with backoff for late elements, and on refusal a full-page screenshot plus a scored-candidate dump under runs/<run_id>/.
 
+- PR #19 Approval gate before form submission: Approval gate: rules for what pauses a run, approvals rows with field summary and screenshot, CLI (default No), MCP-manual and deny-all providers, timeout as deny, and a benchmark auto-approve flag refused for non-local URLs.
+

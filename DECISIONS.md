@@ -32,3 +32,6 @@ Context: the `role-only` baseline is only fair if recorded names match what `get
 
 ## D11: A `select` is described by its option labels
 Context: the selected option changes after the user chooses, so recording it would make the description differ from the replay-time one. Choice: `text` holds all option labels.
+
+## D12: What counts as a submission for the approval gate
+Context: the brief says to pause on any `type=submit` click. Every search form in the demo apps uses a submit button, so that would ask a human to approve every search. Choice: pause on `submit` steps, Enter in a form field, and submit clicks on POST forms or buttons named submit/send/place/confirm/order/pay/reserve; a GET form is a query and does not pause. Trade-off: "Add to cart" and "Save job" (POST) pause too, which is the safer side; the benchmark flag approves them automatically and records each approval.

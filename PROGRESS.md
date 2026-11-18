@@ -28,6 +28,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 - [x] Candidate extraction with descriptions (PR #16)
 - [x] Resolver chain: css, role, semantic with refuse-rather-than-guess (PR #17)
 - [x] Retries with backoff and failure screenshots (PR #18)
+- [x] Approval gate before form submission (PR #19)
 <!-- phase-3 -->
 
 ## Phase 4: MCP server

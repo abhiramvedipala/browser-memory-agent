@@ -166,3 +166,13 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Final failure writes a full-page screenshot and the scored candidate list under runs/<run_id>/
   - [x] Retry count is returned for the run log
   - [x] Tested with delayed and absent elements
+
+## #19 Approval gate before form submission
+- Label: feature | Milestone: Phase 3 | Branch: `phase-3/approval-gate` | Status: fixed in PR #19
+- What and why: Approval gate before form submission.
+- Acceptance checks:
+  - [x] Submit steps, POST-form or submit-named button clicks and Enter in a form field pause the run
+  - [x] An approvals row with field summary and screenshot is written
+  - [x] CLI prompt defaults to No, timeout counts as deny, MCP provider resolves by id
+  - [x] Benchmark auto-approve flag refused for non-local URLs
+  - [x] Denied or timed-out approvals never act
