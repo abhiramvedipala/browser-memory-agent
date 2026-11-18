@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check": "bash scripts/check.sh",
-    "demo": "tsx demo-apps/server.ts",
+    "demo": "tsx demo-apps/main.ts",
     "bench:smoke": "echo 'bench smoke: not wired yet'"
   },
   "dependencies": {
