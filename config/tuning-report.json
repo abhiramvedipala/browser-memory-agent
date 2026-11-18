@@ -14,26 +14,64 @@
   "minilm-l6-v2-q8": {
     "hardSteps": 353,
     "top1Correct": 317,
+    "absentRows": 353,
     "chosen": {
-      "minScore": 0.44,
-      "minMargin": 0.06,
-      "utility": 198,
-      "acceptedCorrect": 208,
-      "acceptedWrong": 1,
-      "refused": 144,
+      "minScore": 0.6,
+      "minMargin": 0.015,
+      "utility": 85,
+      "acceptedCorrect": 85,
+      "acceptedWrong": 0,
+      "refused": 621,
+      "total": 706
+    },
+    "onPresent": {
+      "minScore": 0.6,
+      "minMargin": 0.015,
+      "utility": 85,
+      "acceptedCorrect": 85,
+      "acceptedWrong": 0,
+      "refused": 268,
+      "total": 353
+    },
+    "onAbsent": {
+      "minScore": 0.6,
+      "minMargin": 0.015,
+      "utility": 0,
+      "acceptedCorrect": 0,
+      "acceptedWrong": 0,
+      "refused": 353,
       "total": 353
     }
   },
   "hash-ngram-v1": {
     "hardSteps": 353,
     "top1Correct": 305,
+    "absentRows": 353,
     "chosen": {
-      "minScore": 0.37,
-      "minMargin": 0.105,
-      "utility": 192,
-      "acceptedCorrect": 192,
+      "minScore": 0.53,
+      "minMargin": 0.03,
+      "utility": 123,
+      "acceptedCorrect": 123,
       "acceptedWrong": 0,
-      "refused": 161,
+      "refused": 583,
+      "total": 706
+    },
+    "onPresent": {
+      "minScore": 0.53,
+      "minMargin": 0.03,
+      "utility": 123,
+      "acceptedCorrect": 123,
+      "acceptedWrong": 0,
+      "refused": 230,
+      "total": 353
+    },
+    "onAbsent": {
+      "minScore": 0.53,
+      "minMargin": 0.03,
+      "utility": 0,
+      "acceptedCorrect": 0,
+      "acceptedWrong": 0,
+      "refused": 353,
       "total": 353
     }
   }

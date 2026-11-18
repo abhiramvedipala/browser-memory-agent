@@ -57,3 +57,5 @@ One entry per merged PR, grouped by phase.
 ## Phase 4
 - PR #24 Stdio MCP server with six tools: Stdio MCP server (bma mcp) with record_workflow, list_workflows, get_workflow, replay_workflow, approve_submission and get_run; replays run in the background and pause with pending_approval.
 
+- PR #25 Tuned thresholds accept a wrong element when the target is absent: Threshold tuning now includes target-absent negative rows; thresholds re-frozen (MiniLM 0.60/0.015, hash 0.53/0.03). Fixes the two refusal tests failing on main.
+
