@@ -14,6 +14,7 @@ Status board. Updated after every merged PR (local PR numbers until the GitHub r
 <!-- phase-1 -->
 
 ## Phase 2: Recorder
+- [x] In-page target extractor (PR #8)
 <!-- phase-2 -->
 
 ## Phase 3: Replayer, resolver and approval gate
