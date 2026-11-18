@@ -229,5 +229,25 @@
     return Array.from(document.querySelectorAll(INTERACTIVE_SELECTOR)).filter((el) => isVisible(el));
   }
 
-  window.__bma = { describe, isVisible, isDisabled, roleOf, accessibleName, labelText, nearbyText, interactiveElements, INTERACTIVE_SELECTOR, norm };
+  /**
+   * Visible interactive elements with descriptions. Each is tagged data-bma-cand=<idx> so the
+   * replayer can find it again. Policy: hidden (display/visibility/zero size, closed details,
+   * aria-hidden) are left out; disabled ones are returned flagged; offscreen ones that can be
+   * scrolled to are returned with inViewport=false.
+   */
+  function collect() {
+    for (const old of document.querySelectorAll('[data-bma-cand]')) old.removeAttribute('data-bma-cand');
+    const out = [];
+    for (const el of interactiveElements()) {
+      if (el.closest('[aria-hidden="true"]')) continue;
+      const idx = out.length;
+      el.setAttribute('data-bma-cand', String(idx));
+      const r = el.getBoundingClientRect();
+      const inViewport = r.bottom > 0 && r.right > 0 && r.top < window.innerHeight && r.left < window.innerWidth;
+      out.push(Object.assign({ idx, disabled: isDisabled(el), inViewport }, describe(el)));
+    }
+    return out;
+  }
+
+  window.__bma = { collect, describe, isVisible, isDisabled, roleOf, accessibleName, labelText, nearbyText, interactiveElements, INTERACTIVE_SELECTOR, norm };
 })();

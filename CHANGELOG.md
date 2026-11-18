@@ -37,3 +37,5 @@ One entry per merged PR, grouped by phase.
 ## Phase 3
 - PR #15 Embedder interface, MiniLM, hash embedder and SQLite cache: Embedder interface with MiniLM (transformers.js, verified on Node 22 arm64) and a deterministic HashEmbedder, plus a SQLite vector cache with batches of at most 64.
 
+- PR #16 Candidate extraction with descriptions: In-page collect() plus collectCandidates(): visible interactive elements with descriptions, documented policy for hidden, disabled and offscreen elements, and candidateText() for embeddings.
+
