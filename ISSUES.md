@@ -244,7 +244,7 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [ ] external URL rejected
 
 ## #28 MCP client config and a real session transcript
-- Label: docs | Milestone: Phase 4 | Branch: `phase-4/mcp-client-config` | GitHub: #7 | Status: open
+- Label: docs | Milestone: Phase 4 | Branch: `phase-4/mcp-client-config` | GitHub: #7 | Status: fixed
 - Acceptance checks:
   - [ ] docs/mcp.md has ready config for Claude Code and Claude Desktop pointing at bma mcp
   - [ ] A real stdio session against the demo apps is captured by a script
