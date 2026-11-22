@@ -61,3 +61,4 @@ One entry per merged PR, grouped by phase.
 
 - PR #26 MCP tools validate every URL against the allowlist: Tests that every URL-taking MCP tool rejects anything but the local demo server, before a browser starts, and that tool descriptions state the boundary.
 
+- In-process MCP client tests for the full tool flow: In-process MCP client tests: list, get, replay to success, replay to pending_approval then deny (0 submissions) or approve (1 submission), external URL rejected.

@@ -237,7 +237,7 @@ Mirror of the GitHub issues so the project reads offline. Status: open / fixed i
   - [x] Tests cover each URL-taking tool
 
 ## #27 In-process MCP client tests for the full tool flow
-- Label: test | Milestone: Phase 4 | Branch: `phase-4/mcp-tests` | GitHub: #5 | Status: open
+- Label: test | Milestone: Phase 4 | Branch: `phase-4/mcp-tests` | GitHub: #5 | Status: fixed
 - Acceptance checks:
   - [ ] list and get workflows through a real MCP client
   - [ ] replay to pending_approval, deny submits nothing, approve completes with one submission
