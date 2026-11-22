@@ -159,7 +159,7 @@ export async function replayWorkflow(workflow: Workflow, o: ReplayOptions): Prom
       const res = r.resolution;
       const common = { ...base, retries: r.retries, score: res.score, margin: res.margin, urlMismatch, screenshotPath: r.screenshotPath };
       if (!res.ok || !res.locator) {
-        const error = `refused: ${res.reason ?? 'no match'}`;
+        const error = res.reason ?? "refused: no match";
         results.push({ ...common, error });
         o.store.addRunStep({ runId: run.id, idx: step.idx, strategyUsed: 'none', candidates: res.top, score: res.score, margin: res.margin, retries: r.retries, screenshotPath: r.screenshotPath, error });
         log(`  ${step.idx}: ${step.action} REFUSED (${res.reason})`);

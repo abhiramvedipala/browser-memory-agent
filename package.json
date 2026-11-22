@@ -20,7 +20,8 @@
     "record:golden": "tsx scripts/record-golden.ts",
     "label:intents": "tsx scripts/label-intents.ts",
     "model:fetch": "tsx scripts/fetch-model.ts",
-    "tune": "tsx scripts/tune.ts"
+    "tune": "tsx scripts/tune.ts",
+    "mcp:transcript": "tsx scripts/mcp-transcript.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "1.10.0",
